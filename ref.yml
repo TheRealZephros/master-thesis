@@ -1,0 +1,41 @@
+farpahc:
+  type: "repository"
+  title: "Universal Dependensies Faroese-FarPaHC Treebank"
+  url: "https://github.com/UniversalDependencies/UD_Faroese-FarPaHC"
+  accessed: "2024-11-29"
+
+oft:
+  type: "repository"
+  title: "Universal Dependensies Faroese-OFT Treebank"
+  url: "https://github.com/UniversalDependencies/UD_Faroese-OFT"
+  accessed: "2024-11-29"
+
+fo_nlp_res:
+  type: "repository"
+  title: "Faroese Language Resources by FoNLP"
+  url: "https://github.com/FoNLP/faroese_language_resources"
+  accessed: "2024-12-03"
+
+mtd_res:
+  type: "repository"
+  title: "Faroese Language Resources by The Centre for Faroese Language Technology"
+  url: "https://mtd.setur.fo/en/tilfeingi/swoof/product_cat-text/"
+  accessed: "2024-12-03"
+
+faroe_uni_press:
+  type: "repository"
+  title: "Faroe University Press"
+  url: "https://ojs.setur.fo/"
+  accessed: "2024-12-03"
+
+giellalt:
+  type: "repository"
+  title: "Giellatekno Language Technology Faroese Resources"
+  url: "https://github.com/giellalt/corpus-fao/tree/main"
+  accessed: "2024-12-03"
+
+sprotin:
+  type: "web"
+  title: "Sprotin"
+  url: "https://www.sprotin.fo/"
+  accessed: "2024-12-04"
