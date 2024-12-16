@@ -37,7 +37,7 @@ In the table below, due to confusuing naming conventions, the #gls("POS") tagger
       table.hline()
     ),
   )
-)
+)<pos_morph_comp>
 
 
 #figure(
@@ -60,7 +60,7 @@ In the table below, due to confusuing naming conventions, the #gls("POS") tagger
     })).flatten(),
     table.hline()
   )
-)
+)<morph_feats>
 
 === Lemmatizer & Dependency Parser
 
@@ -80,7 +80,7 @@ In the table below, due to confusuing naming conventions, the #gls("POS") tagger
     [*Stanza*], [*#customRound(stanza.at("Lemmas"), 2)*], [*#customRound(stanza.at("UAS"), 2)*], [*#customRound(stanza.at("LAS"), 2)*],
     table.hline()
   )
-)
+)<dep_parsers>
 
 #figure(
   caption: flex-caption(

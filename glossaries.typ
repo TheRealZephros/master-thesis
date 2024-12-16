@@ -25,4 +25,5 @@
   (key: "MORPH", short: "MORPH", long: "Morphologizer"),
   (key: "MTD", short: "MTD", long: "The Centre for Language Technology"),
   (key: "SETUR", short: "SETUR", long: "The Faroese Language Council"),
+  (key: "DAG", short: "DAG", long: "Directed Acyclic Graph"),
 )
