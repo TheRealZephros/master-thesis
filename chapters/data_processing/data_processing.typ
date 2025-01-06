@@ -18,6 +18,33 @@ The labeled data from the faroese Universal Dependencies@oft@farpahc repos requi
 Each of the files was split into a training and a validation set, where 95% of the data was used for training and 5% was used for validation.
 == Data Augmentation
 The data is augmented by taking correct text and errorifying it. The errorification process is done by using a list of rules, that are applied to the correct sentence. The types of errors are ordered in a hierarchy, where a category can directly have errortypes or have subcategories. A subcategory has errors. The hierarchy is a way to organize the errors, so that the errorification process can be more precise where possible and in the cases where an error could belong to multiple error types, it is defined which error type has higher priority. The error type hierarchy for the grammar model is shown in @grammar_error_type_hierarchy.
+=== Errorification
+The error types are classified as follows:
+- *Inflexions* A general error type for inflexion errors where it is unsure what type of inflexion it is.
+- *Adjectives* inflexion errors for adjectives.
+- *Nouns* inflexion errors for nouns.
+- *Verbs* inflexion errors for verbs.
+- *Missing_Ð* The character *ð* is missing. Ð is a silent letter in faroese, so it is common to forget it.
+- *Added_Ð* The character *ð* is added. Ð is a silent letter in faroese, so it is common to add it in places it's not supposed to be.
+- *Pronouns* 
+- *Proper_Nouns*
+- *Missing_Comma*
+- *Added_Comma*
+- *Period*
+- *Missing_Space*
+- *Ordinal_Number*
+- *Apostrophe*
+- *Hyphen*
+- *Quotation_Mark*
+- *Colon*
+- *Semicolon*
+- *Question_Mark*
+- *Exclamation_Mark*
+- *Capitalize*
+- *Lowercase*
+- *Split_Thousands*
+- *Split_Over_100*
+- *Under_100_Dont_Split*
+- *Word_Confusion*
 
 #include "grammar_error_type_hierarchy.typ"
-
