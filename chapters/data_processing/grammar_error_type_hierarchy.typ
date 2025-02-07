@@ -17,12 +17,15 @@
         Inflexions -> Adjectives
           Adjectives -> Missing_Ð
           Adjectives -> Added_Ð
+          Adjectives -> IR_UR
         Inflexions -> Nouns
           Nouns -> Missing_Ð
           Nouns -> Added_Ð
+          Nouns -> IR_UR
         Inflexions -> Verbs
           Verbs -> Missing_Ð
           Verbs -> Added_Ð
+          Verbs -> IR_UR
       Grammar -> Pronouns
       Grammar -> Proper_Nouns
       Punctuation -> Other
@@ -54,6 +57,7 @@
       Exclamation_Mark[fontcolor=blue]
       Hyphen[fontcolor=blue]
       Inflexions[fontcolor=blue]
+      IR_UR[fontcolor=blue]
       Lowercase[fontcolor=blue]
       Missing_Comma[fontcolor=blue]
       Missing_Ð[fontcolor=blue]
