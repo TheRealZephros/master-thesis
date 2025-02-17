@@ -1,12 +1,12 @@
 farpahc:
   type: "repository"
-  title: "Universal Dependensies Faroese-FarPaHC Treebank"
+  title: "Faroese-FarPaHC Treebank"
   url: "https://github.com/UniversalDependencies/UD_Faroese-FarPaHC"
   accessed: "2024-11-29"
 
 oft:
   type: "repository"
-  title: "Universal Dependensies Faroese-OFT Treebank"
+  title: "Faroese-OFT Treebank"
   url: "https://github.com/UniversalDependencies/UD_Faroese-OFT"
   accessed: "2024-11-29"
 
@@ -39,3 +39,52 @@ sprotin:
   title: "Sprotin"
   url: "https://www.sprotin.fo/"
   accessed: "2024-12-04"
+
+NLLB:
+  type: "web"
+  title: "No Language Left Behind"
+  url: "https://opus.nlpl.eu/NLLB/en&fo/v1/NLLB"
+  accessed: "2025-02-17"
+
+Vaswani2017:
+  type: article
+  title: Attention Is All You Need
+  author:
+  - Vaswani, Ashish
+  - Shazeer, Noam
+  - Parmar, Niki
+  - Uszkoreit, Jakob
+  - Jones, Llion
+  - Gomez, Aidan N.
+  - Kaiser, Lukasz
+  - Polosukhin, Illia
+  date: 2017-06
+  serial-number:
+    arxiv: '1706.03762'
+    doi: 10.48550/ARXIV.1706.03762
+  abstract: The dominant sequence transduction models are based on complex recurrent or convolutional neural networks in an encoder-decoder configuration. The best performing models also connect the encoder and decoder through an attention mechanism. We propose a new simple network architecture, the Transformer, based solely on attention mechanisms, dispensing with recurrence and convolutions entirely. Experiments on two machine translation tasks show these models to be superior in quality while being more parallelizable and requiring significantly less time to train. Our model achieves 28.4 BLEU on the WMT 2014 English-to-German translation task, improving over the existing best results, including ensembles by over 2 BLEU. On the WMT 2014 English-to-French translation task, our model establishes a new single-model state-of-the-art BLEU score of 41.8 after training for 3.5 days on eight GPUs, a small fraction of the training costs of the best models from the literature. We show that the Transformer generalizes well to other tasks by applying it successfully to English constituency parsing both with large and limited training data.
+  parent:
+    type: periodical
+    publisher: arXiv
+
+mt5:
+  type: article
+  title: "mT5: A massively multilingual pre-trained text-to-text transformer"
+  author:
+  - Linting Xue
+  - Noah Constant
+  - Adam Roberts
+  - Mihir Kale
+  - Rami Al-Rfou
+  - Aditya Siddhant
+  - Aditya Barua
+  - Colin Raffel
+  date: 2021-05
+  serial-number:
+    arxiv: '2010.11934v3'
+    doi: 10.48550/arXiv.2010.11934
+  abstract: The recent “Text-to-Text Transfer Transformer” (T5) leveraged a unified text-to-text format and scale to attain state-of-the-art results on a wide variety of English-language NLP tasks. In this paper, we introduce mT5, a multilingual variant of T5 that was pre-trained on a new Common Crawl-based dataset covering 101 languages. We detail the design and modified training of mT5 and demonstrate its state-of-the-art performance on many multilingual benchmarks. We also describe a simple technique to prevent “accidental translation” in the zero-shot setting, where a generative model chooses to (partially) translate its prediction into the wrong language. All of the code and model checkpoints used in this work are publicly available.
+  parent:
+    type: periodical
+    publisher: arXiv
+

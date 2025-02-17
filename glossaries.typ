@@ -22,8 +22,11 @@
   (key: "IRP", short: "IRP", long: "Iterative Refinement Pipeline"),
   (key: "BERT", short: "BERT", long: "Bidirectional Encoder Representations from Transformers"),
   (key: "T5", short: "T5", long: "Text-to-Text Transfer Transformer"),
+  (key: "MT5", short: "mT5", long: "Multilingual Text-to-Text Transfer Transformer"),
+  (key: "GPT", short: "GPT", long: "Generative Pre-trained Transformer"),
   (key: "MORPH", short: "MORPH", long: "Morphologizer"),
   (key: "MTD", short: "MTD", long: "The Centre for Language Technology"),
   (key: "SETUR", short: "SETUR", long: "The Faroese Language Council"),
   (key: "DAG", short: "DAG", long: "Directed Acyclic Graph"),
+  (key: "UD", short: "UD", long: "Universal Dependencies"),
 )

@@ -108,7 +108,7 @@
 #counter(page).update(0)
 #include "chapters/introduction.typ"
 #include "chapters/background.typ"
-// #include "chapters/materials.typ"
+#include "chapters/materials.typ"
 // #include "chapters/methods/index.typ"
 #include "chapters/data_processing/data_processing.typ"
 #include "chapters/design.typ"
@@ -119,7 +119,7 @@
 #include "chapters/outlook.typ"
 
 #pagebreak(weak: true)
-#bibliography("ref.yml", title: [References])//, style: "apa")
+#bibliography("ref.yml", title: [References], style: "apa")
 
 #pagebreak(weak: true)
 
