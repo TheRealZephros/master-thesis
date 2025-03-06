@@ -284,7 +284,7 @@
   )
   pagebreak()
   
-  heading("List of Algorithms", numbering: none)
+  heading("List of Snippets", numbering: none)
   outline(
     title: none,
     depth: 3,

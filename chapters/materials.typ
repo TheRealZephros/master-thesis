@@ -1,20 +1,28 @@
 #import "@preview/glossarium:0.5.1": gls, glspl
 
 = Materials
-@fo_nlp_res
+This section describes the materials used in the study, including the datasets, tools, and resources that were essential for conducting the experiments and analyses. 
 
-@mtd_res
+== spaCy
+Spacy is an open-source software library for advanced #gls("NLP") in Python. It is designed specifically for production use and is widely used in industry. Spacy provides a wide range of features for processing text data, including tokenization, part-of-speech tagging, named entity recognition, and dependency parsing. It also includes pre-trained models for a variety of languages and domains, making it easy to get started with #gls("NLP") tasks. The relevant features of spaCy for this thesis are the #gls("POS") tagger and morphologizer and to a lesser degree the lemmatizer and dependency parsing capabilities.
 
-== Faroe University Press papers
-@faroe_uni_press has published a number of papers in the various fields, including linguistics, history. The papers were collected in the form of PDF files.
+== Language Resources From #gls("MTD")
+#gls("MTD") Has released a number of resources for the Faroese language. A Github repository @fo_nlp_res contains a collection of datasets and models @mtd_res. \ \ 
+A private corpus developed by Uni Johannesen was used as a testset to evaluate the performance of the grammar and spelling models. The corpus contains \~2700 sentences and consists of manually corrected and annotated essays from students. The essays were written in Faroese and contain a variety of errors, including spelling, grammar, and punctuation errors.
+
+== Faroe University Press Papers And Books
+#gls("FRO") has published a number of papers and books in the various fields. The file format of the papers and books is pdf, so some preprocessing is needed to get the text out of them. All publications can be found for free on their #link("https://ojs.setur.fo/index.php/index/index")[website]. The papers are from #gls("FRO"). #gls("FRO") is an annual journal with scientific articles from and about the Faroe Islands and Faroese issues. The journal spans all scientific fields with articles  in Faroese (mostly Humanities and Social Sciences) or English (Natural and Life Sciences). The books are from #gls("FROB"). #gls("FROB")  was established in 2005. It publishes works from all scientific fields in the Faroe Islands. Publications are in Faroese, English and Danish.
 
 == Universal Dependencies
-#gls("UD") is a framework for cross-linguistic grammatical annotation designed to provide a consistent syntactic and morphological analysis across a wide variety of languages. It is based on a universal set of dependency relations and part-of-speech (POS) tags, enabling multilingual parsing and linguistic comparison.
-The UD framework represents syntactic structure using dependency trees, where words are connected by labeled directed edges that define their grammatical relationships (e.g., nsubj for nominal subjects, obj for objects). These annotations follow a principle of typological neutrality, ensuring that the framework remains applicable across languages with diverse syntactic structures.
-The two faroese UD datasets used in this study are the @oft and @farpahc. Both datasets contain manually annotated sentences in Faroese, @oft contains... @farpahc contains... These datasets are valuable resources for training and evaluating NLP models on Faroese text, enabling the development of pos morph etc ... // TODO add more details about the datasets
+#gls("UD") is a framework for cross-linguistic grammatical annotation designed to provide a consistent syntactic and morphological analysis across a wide variety of languages. It is based on a universal set of dependency relations and #gls("POS") tags, enabling multilingual parsing and linguistic comparison.
+The UD framework represents syntactic structure using dependency trees, where words have labels that define their grammatical relationships. These annotations follow a principle of typological neutrality, ensuring that the framework remains applicable across languages with diverse syntactic structures.
+The two faroese UD datasets used in this study are the @oft and @farpahc. Both datasets contain manually annotated sentences in Faroese. \ \
+@oft is based on sentences from the Faroese Wikipedia. The whole Wikipedia was analysed using  @trond_tool. Sentences that contained unknown words were removed. The remaining sentences were manually annotated for Universal Dependencies and the morphology and #gls("POS") tags were converted deterministically using a lookup table. Errors in the original morphology and disambiguation were corrected where found.
+The treebank contains a lot of copula sentences and very little first or second person, as can be expected from Wikipedia texts. \ \
+@farpahc is a conversion of the @farpahc_og to the Universal Dependencies scheme using @ud_converter. @farpahc_og is a 53,000 word corpus which includes three texts from the 19th and 20th centuries. These texts were originally manually parsed according to the @ppche annotation scheme. Two of these parsed texts have been automatically converted to the Universal Dependencies scheme to create the 40,000 word @farpahc.
 
+== Bendingar.fo
+Bendingar.fo is a website, that hosts #gls("BEND") @bend_grunn. #gls("BEND") contains inflections, lemmas and morphological data for faroese words and names. Most words are taken from wordlists that were made for #gls("RÆTT") @rætt, that were taken from a faroese dictionary @fo_ordabók. The names are from the name list from #gls("MAL") @bend_grunn. The project to make #gls("BEND") was started in 2021-22, and was called Insular Nordic morphological database project and got funds from Nordplus Nordic Language (NPLA-2021/10025).
 
- 
-
-== No Language Left Behind
-@NLLB
+== #gls("NLLB")
+The faroese dataset consists of multiple types of data primary #gls("BITEXT"), mined #gls("BITEXT") and monolingual Text. For faroese, the datasets consist of primary @nllb_fo_1 and mined bittext @nllb_fo_2. The primary #gls("BITEXT") corpora are publicly available parallel corpora from a variety of sources. The mined #gls("BITEXT") corpora are retrieved by large-scale #gls("BITEXT") mining. The mined data includes all the English-centric directions and a subset of non-English-centric directions. Only the faroese data is used in this study. 

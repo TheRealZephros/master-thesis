@@ -1,50 +1,177 @@
 farpahc:
-  type: "repository"
+  type: "misc"
   title: "Faroese-FarPaHC Treebank"
-  url: "https://github.com/UniversalDependencies/UD_Faroese-FarPaHC"
-  accessed: "2024-11-29"
+  url: 
+    value: "https://github.com/UniversalDependencies/UD_Faroese-FarPaHC"
+    date: "2024-11-29"
 
 oft:
-  type: "repository"
+  type: "misc"
   title: "Faroese-OFT Treebank"
-  url: "https://github.com/UniversalDependencies/UD_Faroese-OFT"
-  accessed: "2024-11-29"
+  url: 
+   value: "https://github.com/UniversalDependencies/UD_Faroese-OFT"
+   date: "2024-11-29"
+
+trond_tool:
+  type: "misc"
+  title: "Trond Trosterud's tools for Faroese"
+  url: 
+    value: "https://gtweb.uit.no/cgi-bin/smi/smi.cgi?text=%C3%81+tunguni+eru+sm%C3%A1ar+tenn.&action=analyze&lang=fao&plang=eng"
+    date: "2025-02-19"
+
+farpahc_og:
+  type: "misc"
+  title: "Faroese Parsed Historical Corpus (FarPaHC)"
+  url: 
+    value: "https://github.com/einarfs/farpahc"
+    date: "2025-02-19"
+
+ud_converter:
+  type: "misc"
+  title: "UDConverter"
+  url: 
+    value: "https://github.com/thorunna/UDConverter"
+    date: "2025-02-19"
+
+ppche:
+  type: "misc"
+  title: "Penn Parsed Corpora of Historical English"
+  url: 
+    value: "https://www.ling.upenn.edu/hist-corpora/"
+    date: "2025-02-19"
 
 fo_nlp_res:
-  type: "repository"
+  type: "misc"
   title: "Faroese Language Resources by FoNLP"
-  url: "https://github.com/FoNLP/faroese_language_resources"
-  accessed: "2024-12-03"
+  url: 
+    value: "https://github.com/FoNLP/faroese_language_resources"
+    date: "2024-12-03"
 
 mtd_res:
-  type: "repository"
-  title: "Faroese Language Resources by The Centre for Faroese Language Technology"
-  url: "https://mtd.setur.fo/en/tilfeingi/swoof/product_cat-text/"
-  accessed: "2024-12-03"
+  type: "misc"
+  title: "Faroese Language Resources by The Centre for Language Technology"
+  url: 
+    value: "https://mtd.setur.fo/en/tilfeingi/swoof/product_cat-text/"
+    date: "2024-12-03"
 
 faroe_uni_press:
-  type: "repository"
+  type: "misc"
   title: "Faroe University Press"
-  url: "https://ojs.setur.fo/"
-  accessed: "2024-12-03"
+  url: 
+    value: "https://ojs.setur.fo/"
+    date: "2024-12-03"
 
 giellalt:
-  type: "repository"
+  type: "misc"
   title: "Giellatekno Language Technology Faroese Resources"
-  url: "https://github.com/giellalt/corpus-fao/tree/main"
-  accessed: "2024-12-03"
+  url: 
+    value: "https://github.com/giellalt/corpus-fao/tree/main"
+    date: "2024-12-03"
 
 sprotin:
-  type: "web"
+  type: "misc"
   title: "Sprotin"
-  url: "https://www.sprotin.fo/"
-  accessed: "2024-12-04"
+  url: 
+    value: "https://www.sprotin.fo/"
+    date: "2024-12-03"
 
-NLLB:
-  type: "web"
+bendingar:
+  type: "misc"
+  title: "Bendingar"
+  url: 
+    value: "https://bendingar.fo/"
+    date: "2025-02-19"
+
+nllb:
+  type: "article"
   title: "No Language Left Behind"
-  url: "https://opus.nlpl.eu/NLLB/en&fo/v1/NLLB"
-  accessed: "2025-02-17"
+  author:
+  - NLLB Team
+  - Marta R. Costa-jussà 
+  - James Cross
+  - Onur Çelebi
+  - Maha Elbayad
+  - Kenneth Heafield
+  - Kevin Heffernan
+  - Elahe Kalbassi
+  - Janice Lam
+  - Daniel Licht
+  - Jean Maillard
+  - Anna Sun
+  - Skyler Wang
+  - Guillaume Wenzek
+  - Al Youngblood
+  - Bapi Akula
+  - Loic Barrault
+  - Gabriel Mejia Gonzalez
+  - Prangthip Hansanti
+  - John Hoffman
+  - Semarley Jarrett
+  - Kaushik Ram Sadagopan
+  - Dirk Rowe
+  - Shannon Spruit
+  - Chau Tran
+  - Pierre Andrews
+  - Necip Fazil Ayan
+  - Shruti Bhosale
+  - Sergey Edunov
+  - Angela Fan
+  - Cynthia Gao
+  - Vedanuj Goswami
+  - Francisco Guzmán
+  - Philipp Koehn
+  - Alexandre Mourachko
+  - Christophe Ropers
+  - Safiyyah Saleem
+  - Holger Schwenk
+  - Jeff Wang
+  url: 
+    value: "https://opus.nlpl.eu/NLLB/en&fo/v1/NLLB"
+    date: "2025-02-17"
+  date: 2022-07-11
+  serial-number:
+    arxiv: '2207.05267'
+    doi: 10.48550/arXiv.2207.04672
+  abstract: "Driven by the goal of eradicating language barriers on a global scale, machine translation has solidified itself as a key focus of artificial intelligence research today. However, such efforts have coalesced around a small subset of languages, leaving behind the vast majority of mostly low-resource languages. What does it take to break the 200 language barrier while ensuring safe, high quality results, all while keeping ethical considerations in mind? In No Language Left Behind, we took on this challenge by first contextualizing the need for low-resource language translation support through exploratory interviews with native speakers. Then, we created datasets and models aimed at narrowing the performance gap between low and high-resource languages. More specifically, we developed a conditional compute model based on Sparsely Gated Mixture of Experts that is trained on data obtained with novel and effective data mining techniques tailored for low-resource languages. We propose multiple architectural and training improvements to counteract overfitting while training on thousands of tasks. Critically, we evaluated the performance of over 40,000 different translation directions using a human-translated benchmark, Flores-200, and combined human evaluation with a novel toxicity benchmark covering all languages in Flores-200 to assess translation safety. Our model achieves an improvement of 44% BLEU relative to the previous state-of-the-art, laying important groundwork towards realizing a universal translation system. Finally, we open source all contributions described in this work, accessible at https://github.com/facebookresearch/fairseq/tree/nllb"
+  parent:
+    type: periodical
+    publisher: arXiv
+
+nllb_fo_1:
+  type: "misc"
+  title: "NLLB - Faroese - Primary"
+  url: 
+    value: "https://github.com/facebookresearch/fairseq/blob/nllb/examples/nllb/modeling/scripts/flores200/lang_pairs_primary.txt"
+    date: "2025-03-04"
+
+nllb_fo_2:
+  type: "misc"
+  title: "NLLB - Faroese - Mined"
+  url: 
+    value: "https://github.com/facebookresearch/fairseq/blob/nllb/examples/nllb/modeling/scripts/flores200/lang_pairs_mine.txt"
+    date: "2025-03-04"
+
+
+bend_grunn:
+  type: "misc"
+  title: "Bendingarunnurin"
+  url: 
+    value: "https://bendingar.fo/um/"
+    date: "2025-02-19"
+
+rætt:
+  type: "misc"
+  title: "Rættstavarin"
+  url: 
+    value: "https://divvun.org/"
+    date: "2025-02-19"
+
+fo_ordabók:
+  type: "book"
+  title: "Føroysk Orðabók"
+  author: Jóhan Hendrik W. Poulsen
+  publisher: Føroya Fróðskaparfelag
+  date: "1998"
 
 Vaswani2017:
   type: article
@@ -67,6 +194,8 @@ Vaswani2017:
     type: periodical
     publisher: arXiv
 
+
+
 mt5:
   type: article
   title: "mT5: A massively multilingual pre-trained text-to-text transformer"
@@ -87,4 +216,3 @@ mt5:
   parent:
     type: periodical
     publisher: arXiv
-
