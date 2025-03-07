@@ -111,7 +111,7 @@
 #include "chapters/materials.typ"
 // #include "chapters/methods/index.typ"
 #include "chapters/data_processing/data_processing.typ"
-#include "chapters/design.typ"
+// #include "chapters/design.typ"
 #include "chapters/results.typ"
 // #include "chapters/results2.typ"
 #include "chapters/discussion.typ"
