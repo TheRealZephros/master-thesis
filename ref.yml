@@ -151,6 +151,15 @@ nllb_fo_2:
     value: "https://github.com/facebookresearch/fairseq/blob/nllb/examples/nllb/modeling/scripts/flores200/lang_pairs_mine.txt"
     date: "2025-03-04"
 
+Næs:
+  type: "article"
+  title: "Færøsk retskrivning – resultater fra en undersøgelse af færøske stile"
+  author: "Katrin Næs"
+  date: "2005"
+  url:
+    value: "http://ojs.statsbiblioteket.dk/index.php/sin/issue/archive"
+    date: "2025-03-10"
+
 spell_errors_src:
   type: "misc"
   title: "Spelling Errors text files"

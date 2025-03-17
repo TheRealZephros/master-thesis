@@ -1,6 +1,9 @@
 #import "@preview/glossarium:0.5.1": gls, glspl
 #import "../../utils.typ": errHighlight, corrHighlight, flex-caption, customRound
 #import "@preview/lovelace:0.2.0": pseudocode, no-number, ind, ded,algorithm, data
+#import "errors_xml.typ": errors_xml
+#import "inflexions.typ": inflexion_json
+#import "lemmas.typ": lemmas
 
 
 = Data Processing <DataProcessing.sec>
@@ -21,41 +24,8 @@ The labeled data from the faroese #gls("UD") repositories required minimal proce
 Each of the files was split into a training and a validation set, where 95% of the data was used for training and 5% was used for validation.
 === Private Corpus <private_corpus.sec>
 The original corpus is in xml format where each sentence is a separate xml tag and each word and punctuation is a tag in the sentence. If a word or punctuation is corrected, a revision tag replaces the error and contains the original and corrected text.
-#data(
-  caption: flex-caption(
-    [An example of how a sentence in the private corpus is formatted (this is not a real sentence from the corpus)],
-    [An example of how a sentence in the private corpus is formatted]
-  ),
- ```xml
-<s n=“1”>
-    <w>Vit</w>
-    <revision id=“15”>
-        <original>
-            <w>fóru</w>
-        </original>
-        <corrected>
-            <w>fara</w>
-        </corrected>
-        <errors>
-            <error xtype=“past4pres” eid=“0” />
-        </errors>
-    <revision id=“16”>
-        <original>
-            <w>niðaná</w>
-        </original>
-        <corrected>
-            <w>niðan</w>
-            <w>á</w>
-        </corrected>
-        <errors>
-            <error xtype=“adv4adv-prep” eid=“0” />
-        </errors>
-    </revision>
-    <w>fjallið</w>
-    <c>.</c>
-</s>
-```
-) <private_corpus_xml>
+#errors_xml <private_corpus_xml>
+
 For each error in a sentence a pair of incorrect and correct sentences are generated. The incorrect sentence contains the error and the correct sentence is the same as the incorrect sentence, but with the error corrected. #ref(<inc_corr_sentences>) shows the sentences that are generated from the sentence in #ref(<private_corpus_xml>). \ \
 #figure(
   grid(
@@ -81,20 +51,10 @@ For each error in a sentence a pair of incorrect and correct sentences are gener
 The data is augmented by taking correct text and corrupting it. The corruption process is done by using a list of rules, that are applied to the correct sentence. The types of errors are ordered in a hierarchy, where a category can directly have errortypes or have subcategories. A subcategory has errors. The hierarchy is a way to organize the errors, so that the corruption process can be more precise where possible and in the cases where an error could belong to multiple error types, it is defined which error type has higher priority.
 
 === Grammar <corruption_grammar.sec>
+A grammar error is an error that violates the rules of grammar. This means all the words in the sentence are spelled correctly, but the sentence is still grammatically incorrect. Generating grammar errors varies a lot in complexity, some are as simple as a missing comma, which just needs simple string matching and removing the comma. Others require multiple components, working together, to make.
 
-
+#inflexion_json <inflexion_data>
+#lemmas <lemmas>
 
 === Spelling <corruption_spelling.sec>
-There are 2 categories of spelling errors, the first is a typographical error, the second is a cognitive error. Typographical errors are made my mistyping a word, while cognitive errors are made by a lack of understanding.
-
-==== Typographical Errors <typo_errors.sec>
-Typographical errors can be split into 3 subcategories, they can be generated as follows: \
-*Insertion* errors can be made by inserting a character into a word. \
-*Substitution* errors can be made by substituting a character in a word. \ 
-*Transposition* errors can be made by transposing two adjacent characters in a word. \ \
-
-
-
-
-==== Cognitive Errors <cog_errors.sec>
-Cognitive errors require some language understanding to generate. By using some patterns from #gls("RÆTT") @spell_errors_src and expanding upon them, a list of cognitive spelling error patterns was made.
+Cognitive errors require some language understanding to generate. By using some patterns from #gls("RÆTT") @spell_errors_src and expanding upon them with errors from @Næs, a list of cognitive spelling error patterns was made. 

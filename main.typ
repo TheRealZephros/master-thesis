@@ -107,7 +107,7 @@
 #set-page-properties()
 #counter(page).update(0)
 #include "chapters/introduction.typ"
-#include "chapters/background.typ"
+#include "chapters/background/background.typ"
 #include "chapters/materials.typ"
 // #include "chapters/methods/index.typ"
 #include "chapters/data_processing/data_processing.typ"
