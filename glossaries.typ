@@ -37,4 +37,6 @@
   (key: "FO_OB", short: "Føroysk orðabók", long: "Faroese Dictionary"),
   (key: "MAL", short: "Málráðið", long: "The Faroese Language Council"),
   (key: "BITEXT", short: "bitext", long: "billingual text"),
+  (key: "DOC", short: "Doc", long: "spaCy Doc"),
+  (key: "DOCB", short: "DocBin", long: "spaCy DocBin"),
 )

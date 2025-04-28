@@ -1,9 +1,10 @@
 #import "@preview/glossarium:0.5.1": gls, glspl
 #import "../../utils.typ": errHighlight, corrHighlight, flex-caption, customRound
-#import "@preview/lovelace:0.2.0": pseudocode, no-number, ind, ded,algorithm, data
+#import "@preview/lovelace:0.2.0": pseudocode, no-number, ind, ded, algorithm, data
 #import "errors_xml.typ": errors_xml
 #import "inflexions.typ": inflexion_json
 #import "lemmas.typ": lemmas
+#import "corruption_process.typ": corruption_process
 
 
 = Data Processing <DataProcessing.sec>
@@ -22,7 +23,7 @@ The unlabeled dataset was saved as jsonl for pretraining of the mt5 model and as
 === #gls("UD") Data <ud_data.sec>
 The labeled data from the faroese #gls("UD") repositories required minimal processing, it was saved in a single json file for easier inspection. Then all duplicate sentences were removed from the dataset. The json file was the converted to the spaCy format, which is a binary format used to train spacy models. It consists of a list of docs, where each doc contains sentences that are labeled, depending on what model you train. In this case, there were a few different files, the majority of them only had #gls("POS") and morphologizer labels, but some of them also had dependency labels, and some of them had lemmatizer labels. The files with #gls("POS") and #gls("MORPH") labels, had 6652 labeled faroese sentences, which add up to 9.3 MiB of data. The files with lemma labels had 1428 sentences, which added up to 756 KiB of data. And lastly the files with dependency parser labels had 3049 sentences which added up to 2.8 MiB of data.
 Each of the files was split into a training and a validation set, where 95% of the data was used for training and 5% was used for validation.
-=== Private Corpus <private_corpus.sec>
+=== Private Corpus from #gls("MTD") <private_corpus.sec>
 The original corpus is in xml format where each sentence is a separate xml tag and each word and punctuation is a tag in the sentence. If a word or punctuation is corrected, a revision tag replaces the error and contains the original and corrected text.
 #errors_xml <private_corpus_xml>
 
@@ -50,11 +51,17 @@ For each error in a sentence a pair of incorrect and correct sentences are gener
 == Data Augmentation <data_augmentation.sec>
 The data is augmented by taking correct text and corrupting it. The corruption process is done by using a list of rules, that are applied to the correct sentence. The types of errors are ordered in a hierarchy, where a category can directly have errortypes or have subcategories. A subcategory has errors. The hierarchy is a way to organize the errors, so that the corruption process can be more precise where possible and in the cases where an error could belong to multiple error types, it is defined which error type has higher priority.
 
-=== Grammar <corruption_grammar.sec>
-A grammar error is an error that violates the rules of grammar. This means all the words in the sentence are spelled correctly, but the sentence is still grammatically incorrect. Generating grammar errors varies a lot in complexity, some are as simple as a missing comma, which just needs simple string matching and removing the comma. Others require multiple components, working together, to make.
+=== Corruption Process <corruption_process.sec>
+Before the corruption process can begin, the text is tokenized and annotated with #gls("POS") and #gls("MORPH") tags and saved in a #gls("DOC"). The #gls("DOC") is then put in a #gls("DOCB") which is serialized and written to a file. The first step in the corruption is to generate a json file that contains every corruption that can be made. Before distributing the corruptions into a training set, a distribution file, which is a json file that specifies the proportion of each errortype to introduce into the dataset, is used. The json file is then loaded and the corruptions are applied, with the proportions specified in the distribution file, to the text. The corrupted dataset is then shuffled to make sure the model doesn't overfit on the order of the data.
+
+#corruption_process
+
+
+==== Grammar <corruption_grammar.sec>
+A grammar error is an error that violates the rules of grammar. This means all the words in the sentence are spelled correctly, but the sentence is still grammatically incorrect. Generating grammar errors varies a lot in complexity, some are as simple as a missing comma, which just needs simple string matching and removing the comma. Others require multiple components, working together, to make. 
 
 #inflexion_json <inflexion_data>
-#lemmas <lemmas>
+#lemmas <lemmas_data>
 
-=== Spelling <corruption_spelling.sec>
-Cognitive errors require some language understanding to generate. By using some patterns from #gls("RÆTT") @spell_errors_src and expanding upon them with errors from @Næs, a list of cognitive spelling error patterns was made. 
+==== Spelling <corruption_spelling.sec>
+
