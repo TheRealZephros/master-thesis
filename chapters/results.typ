@@ -8,10 +8,6 @@
 = Results <Results.sec>
 This chapter presents the results of the experiments conducted in this study. The results are organized into sections: Each section provides a detailed analysis of the performance of the models and the evaluation metrics used to assess their effectiveness.
 
-== mT5 Grammar Model <results_grammar.sec>
-
-== mT5 Spelling Model <results_spelling.sec>
-
 == spaCy Pipeline <results_spacy.sec>
 A spaCy pipeline was trained on the Faroese dataset using the following components: a #gls("POS") tagger, morphologizer, lemmatizer, and dependency parser. The performance of each component was evaluated using either accuracy or precision, recall, and F1 score, depending on what metric is relevant for the given component. The #gls("POS") tagger and morphologizer were trained on the same dataset, while the lemmatizer and dependency parser were each trained on separate datasets. Due to limited data, the same training set could not be used for all components, the amounts of data available for each component is mentioned in their section. The results of the experiments are presented in the following subsections. 
 
@@ -107,5 +103,14 @@ In the table below, due to confusuing naming conventions, the #gls("POS") tagger
   )
 )
 
-== Evaluation Metrics <eval_metrics.sec>
+== mT5 Grammar Model <results_grammar.sec>
+=== Pre-training <results_grammar_pre.sec>
+The 
+
+
+=== Fine-tuning <results_grammar_fine.sec>
+
+
+== mT5 Spelling Model <results_spelling.sec>
+
 

@@ -21,6 +21,35 @@ Transformers have been the foundation for state-of-the-art NLP models, including
 === BERT
 #gls("BERT") is a pre-trained language model developed by Google.
 
+
+== Evaluation Metrics
+This study uses the evaluation metrics *precision*, *recall*, *accuracy*, and the $upright(bold(F))_beta$ score. These are commonly applied in #gls("NLP") tasks to assess a model's ability to correctly identify relevant instances. Each prediction falls into one of four categories: #gls("TP"), #gls("FP"), #gls("TN"), and #gls("FN"). These values are used to compute the evaluation metrics. \ \
+The intuition behind each metric is as follows: \
+*Precision* — When the model predicts a positive, how often is it correct? \
+*Recall* — When a positive instance exists, how often does the model correctly identify it? \
+*Accuracy* — The overall rate of correct predictions, considering both positive and negative classes. \
+$upright(bold(F))_beta$ — A single score that balances precision and recall. The weighting depends on the value of $beta$: \
+$bold(beta) = 1$ precision and recall are weighted equally (F₁ score). \
+$bold(beta) < 1$ precision is weighted more heavily. \
+$bold(beta) > 1$ recall is weighted more heavily.\ \
+The formulae for the metrics are:
+
+$
+#[Precision] = frac( gls("TP"), gls("TP") + gls("FP") )
+$
+
+$
+#[Recall] = frac( gls("TP"), gls("TP") + gls("FN") )
+$
+
+$
+#[Accuracy] = frac( #gls("TP") + gls("TN"), #[Total Predictions] ) = frac( gls("TP") + gls("TN"), gls("TP") + gls("FP") + gls("TN") + gls("FN") )
+$
+
+$
+upright(F)_(beta) = (1 + beta^2) * frac( #[Precision] * #[Recall], (beta^2 * #[Precision]) + #[Recall] )
+$
+
 === Grammar Correction
 
 
