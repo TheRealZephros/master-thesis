@@ -1,6 +1,16 @@
 #import "@preview/glossarium:0.5.1": gls, glspl
+#import "@preview/plotst:0.2.0": axis, plot, graph_plot
 #import "../utils.typ": flex-caption, customRound
 
+
+
+#let pretraining = csv("../results/pretraining.csv", )
+#let pretraining = pretraining.map(row => (int(row.first()),float(row.last())) )
+
+#let x_axis = axis(min: 0, max: 81203, step: 10000, location: "bottom")
+#let y_axis = axis(min: 4, max: 10, step: 1, location: "left", helper_lines: false,)
+#let pretraining_plot = plot( data: pretraining, axes: (x_axis, y_axis))
+#let pretraining_graph = graph_plot(pretraining_plot, (100%, 50%))
 
 #let spacy = json("../results/spacy_morph_tag.json")
 #let stanza = json("../results/stanza-fo_performance.json")
@@ -106,6 +116,14 @@ In the table below, due to confusuing naming conventions, the #gls("POS") tagger
 == mT5 Grammar Model <results_grammar.sec>
 === Pre-training <results_grammar_pre.sec>
 The 
+
+#figure(
+  caption: flex-caption(
+    [mT5 pre-training performance metrics],
+    [mT5 pre-training performance metrics]
+  ),
+  pretraining_graph
+)<mt5_pretrain>
 
 
 === Fine-tuning <results_grammar_fine.sec>
