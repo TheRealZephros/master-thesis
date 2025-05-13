@@ -1,5 +1,6 @@
 #import "@preview/glossarium:0.5.1": gls, glspl
 #import "keyboard_typo.typ": keyboard_typo
+#import "../../utils.typ": flex-caption, customRound
 
 
 
@@ -13,7 +14,35 @@ At the core of the transformer architecture is the self-attention mechanism, whi
 Transformers have been the foundation for state-of-the-art NLP models, including #gls("BERT"), #gls("MT5") and perhaps the best known transformer to the general public, #gls("GPT"). These architectures have been widely applied in text generation, translation, and classification tasks, as well as in domains such as computer vision, protein structure prediction, and reinforcement learning. The scalability and effectiveness of transformers have driven their adoption across various fields, making them a cornerstone of modern deep learning research.
 
 === Self-attention
-@Vaswani2017
+Self-attention is a mechanism that allows a model to weigh the importance of different words in a sequence when making predictions. It computes a weighted sum of the input representations, where the weights are determined by the similarity between the words. This enables the model to capture long-range dependencies and relationships between words, regardless of their position in the sequence. Self-attention is a key component of transformer architectures, enabling them to process sequences in parallel and learn contextual representations effectively.
+Self-attention is a sequence to sequence process that takes sequence of vectors as input, these can be called $x_1,x_2...,x_t$, and outputs a sequence of vectors $y_1,y_2...,y_t$. The dimentionality of the input and output vectors is the same. To produce the output vector $y_i$, the self-attention operation computes a weighted sum of the input vectors, where the weights are determined by the similarity between the input vectors. The self-attention operation can be expressed mathematically as follows:
+$ y_i = sum_(j) w_(i j)x_j $
+
+Where j indexes over the input vectors, and the weights sum up to 1. $w_(i j)$ is a computed value, and not a parameter. The weights are computed using a similarity function, which measures the similarity between the input vectors. The most common similarity function used in self-attention is the dot product. which is computed as follows:
+$ w'_(i j) = x_i^T x_j $
+
+The dot product gives a result that is in the range [$-infinity,infinity$]. So to normalize the weight, a softmax functioon is applied to the weights, which transforms the weights into a probability distribution. The softmax function is defined as follows:
+$ w_(i j) = frac(exp w'_(i j), sum_j exp w'_(i j)) $
+
+That is the basic self-attention operation, but it is not the only one. On @self_attention is an illustration of the self-attention mechanism. \
+// TODO do a better job of crediting the image
+#figure(
+  caption: flex-caption(
+    [Self-attention mechanism illustrated. Not including the softmax operation. Credit to #link("https://peterbloem.nl/blog/transformers")[Peter Bloem]],
+    [Self-attention mechanism]
+  ),
+  image("../../images/self-attention.png", width: 80%, height: auto)
+) <self_attention>
+
+Modern transformers use a more complex version of self-attention. The input vector $x_i$ is used in 3 different ways it's compared to every other input vector to computeits own output $y_i$. It's also compared to every other input vector to compute the output of every other input vector $y_j$. And lastly it is also used as a part of the weighted sum to compute the output of each output vector, once the weights have been computed. These roles are called *query*, *key*, and *value*. 
+To compute the query, key, and value vectors for a given input vector $x_i$, three separate linear transformations are applied using learned weight matrices $W_q$, $W_k$, $W_v$, each of size $k times k$. These matrices project the input into three different representations:
+$ q_i = W_q x_i space.quad k_i = W_k x_i space.quad v_i = W_v x_i $
+$ w'_(i j) = q_i^T k_j $
+$ w_(i j) = "softmax("w'_(i j)")" $
+$ y_i = sum_j w_(i j) v_j $
+
+
+
 
 === mT5
 #gls("MT5") is a pre-trained language model developed by Google. It is based on the Transformer architecture and is designed for text-to-text transfer learning.
