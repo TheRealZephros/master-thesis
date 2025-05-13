@@ -1,7 +1,7 @@
 #import "@preview/glossarium:0.5.1": gls, glspl
 #import "../../utils.typ": flex-caption, customRound
 
-#import "graphs.typ": pretraining_graph, ex3_graph, ex3_bl_graph, ex4_graph, ex3_bl_ex4_ol
+#import "graphs.typ": pretraining_graph, ex3_graph, ex3_bl_graph, ex4_graph, ex3_ol
 
 #let spacy = json("../../results/spacy_morph_tag.json")
 #let stanza = json("../../results/stanza-fo_performance.json")
@@ -104,11 +104,15 @@ In the table below, due to confusuing naming conventions, the #gls("POS") tagger
   )
 )
 
-== mT5-base pretraining 
+== mT5 pretraining <results_pretraining.sec> // TODO get config files 
+To see if it was possible to pretrain a faroese mT5 model, attempts were made to pretrain a custom mT5 model on a Faroese dataset. The dataset was a collection of wikipedia articles, blog posts 
+
 During experimentation with a reduced-capacity mT5 model, it became evident that the model's representational capacity was insufficient for the target task. Bitlinear seemed to have a stabilizing effect on the training process, \ \
-#ex3_bl_ex4_ol
-#ex3_graph
-#pretraining_graph
+#ex3_ol <ex3_ol>
+#ex3_graph <ex3_graph>
+
+Another pretraining was conducted using the larger mT5-base model. The training used the same dataset as the previous experiment. 
+#pretraining_graph <pretraining_graph>
 
 
 == mT5 Grammar Model <results_grammar.sec>

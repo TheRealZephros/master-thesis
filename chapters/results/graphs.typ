@@ -10,8 +10,8 @@
 
 #let ex3 = csv("../../results/ex3_data.csv", )
 #let ex3 = ex3.map(row => (int(row.first()),float(row.last())) )
-#let ex3_x_axis = axis(min: 0, max: 6000, step: 500, location: "bottom")
-#let ex3_y_axis = axis(min: 0, max: 100, step: 5, location: "left", helper_lines: true,)
+#let ex3_x_axis = axis(min: 0, max: 81200, step: 10000, location: "bottom")
+#let ex3_y_axis = axis(min: 0, max: 50, step: 5, location: "left", helper_lines: true,)
 #let ex3_plot = plot( data: ex3, axes: (ex3_x_axis, ex3_y_axis))
 
 #let ex3_bl = csv("../../results/ex3_bl_data.csv", )
@@ -60,7 +60,7 @@
   stroke: green,
 )
 
-#let ex3_bl_ex4_ol = overlay(
-  (ex3_bl_graph, ex4_graph),
+#let ex3_ol = overlay(
+  (ex3_bl_graph, ex3_graph),
   (100%, 50%),
 )
