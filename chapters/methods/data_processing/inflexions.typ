@@ -1,4 +1,4 @@
-#import "../../utils.typ": flex-caption, customRound
+#import "../../../utils.typ": flex-caption, customRound
 #import "@preview/glossarium:0.5.1": gls, glspl
 #import "@preview/lovelace:0.2.0": pseudocode, no-number, ind, ded,algorithm, data
 

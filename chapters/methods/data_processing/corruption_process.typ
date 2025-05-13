@@ -1,5 +1,5 @@
 #import "@preview/diagraph:0.3.0": render, raw-render
-#import "../../utils.typ": flex-caption, customRound
+#import "../../../utils.typ": flex-caption, customRound
 #import "@preview/glossarium:0.5.1": gls, glspl
 
 #let corruption_process = figure(

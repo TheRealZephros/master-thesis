@@ -274,7 +274,7 @@
     target: figure.where(kind: image),
   )
   pagebreak()
-  
+
   heading("List of Tables", numbering: none)
   outline(
     title: none,
@@ -283,7 +283,16 @@
     target: figure.where(kind: table),
   )
   pagebreak()
-  
+
+  heading("List of Graphs", numbering: none)
+  outline(
+    title: none,
+    depth: 3,
+    indent: true,
+    target: figure.where(kind: "plot"),
+  )
+  pagebreak()
+
   heading("List of Snippets", numbering: none)
   outline(
     title: none,

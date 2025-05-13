@@ -6,6 +6,10 @@ This section describes the materials used in the study, including the datasets, 
 == spaCy <spacy.sec>
 Spacy is an open-source software library for advanced #gls("NLP") in Python. It is designed specifically for production use and is widely used in industry. Spacy provides a wide range of features for processing text data, including tokenization, part-of-speech tagging, named entity recognition, and dependency parsing. It also includes pre-trained models for a variety of languages and domains, making it easy to get started with #gls("NLP") tasks. The relevant features of spaCy for this thesis are the #gls("POS") tagger and morphologizer and to a lesser degree the lemmatizer and dependency parsing capabilities.
 
+== NanoT5 <nanot5.sec>
+NanoT5 @nawrot 
+
+
 == Language Resources From #gls("MTD") <mtd.sec>
 #gls("MTD") Has released a number of resources for the Faroese language. A Github repository @fo_nlp_res contains a collection of datasets and models @mtd_res. \ \ 
 A private corpus developed by Uni Johannesen was used as a testset to evaluate the performance of the grammar and spelling models. The corpus contains \~2700 sentences and consists of manually corrected and annotated essays from students. The essays were written in Faroese and contain a variety of errors, including spelling, grammar, and punctuation errors. Additionally the data used in the study by @Næs on spelling errors in faroese students' essays, was also used in this study.

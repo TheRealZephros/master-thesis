@@ -231,3 +231,18 @@ mt5:
   parent:
     type: periodical
     publisher: arXiv
+
+nawrot:
+  type: article
+  title: "nanoT5: Fast & Simple Pre-training and Fine-tuning of T5 Models with Limited Resources"
+  author: Piotr Nawrot
+  date: 2023-12
+  url:
+    value: "https://aclanthology.org/2023.nlposs-1.11"
+    date: 2025-05-12
+  serial-number:
+    arxiv: '2309.02373'
+    doi: 10.48550/arXiv.2309.02373
+  publisher: Association for Computational Linguistics
+  booktitle: "Proceedings of the 3rd Workshop for Natural Language Processing Open Source Software (NLP-OSS 2023)"
+
