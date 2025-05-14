@@ -42,12 +42,23 @@ $ w_(i j) = "softmax("w'_(i j)")" $
 $ y_i = sum_j w_(i j) v_j $
 
 
-=== T5
+=== #gls("T5")
+Building on the foundation laid by the original Transformer architecture introduced in “Attention Is All You Need”, the #gls("T5") model proposed by @Raffel2019 marks a major advancement in the unification and simplification of natural language processing tasks. It introduces a flexible and scalable framework that reframes all NLP problems within a single, consistent text-to-text format. In this setup, both inputs and outputs are treated as strings, regardless of the task. For instance, translation is approached as: \
+"translate English to German: That is good #sym.arrow.r Das ist gut" \
+This unified formulation eliminates the need for task-specific heads or output formats, streamlining architecture design and enabling more effective multitask and transfer learning.\
+Beyond its task framing, #gls("T5") incorporates several architectural innovations. To improve generalization on sequences of varying length, it replaces absolute positional embeddings with relative positional bias, allowing the model to focus on the relative distances between tokens rather than fixed positions. In terms of normalization, it departs from the post-layer norm approach used in the original Transformer, opting instead for pre-layer normalization, which applies layer norm before the attention and feed-forward sub-layers—an adjustment that enhances training stability, especially in deeper variants. \
+Dropout on attention weights, commonly used in earlier models, is also disabled here, as it was shown to negatively impact performance during large-scale pretraining. In the feed-forward layers, the standard #gls("RELU") activation is replaced with #gls("GELU"), offering smoother gradients and better performance in deeper networks. \
+For tokenization, the model leverages a byte-level SentencePiece tokenizer, which avoids the issue of unknown tokens and supports improved handling of multilingual and non-standard text by operating directly on raw byte sequences. \
+When it comes to pretraining, #gls("T5") introduces a distinct span-corruption objective. Unlike #gls("BERT")'s masked token prediction or #gls("GPT")'s autoregressive formulation, this approach involves masking out random spans of text and replacing them with sentinel tokens (e.g., \<extra_id_0\>), tasking the model with reconstructing the missing spans. This span-level corruption helps the model develop stronger contextual understanding and more flexible generative capabilities. \
+Finally, the model family was released in multiple scales from #gls("T5")-Small to #gls("T5")-XXL and trained on the #gls("C4") dataset. Its design emphasizes scalability, demonstrating that performance improves predictably with increased model and data size, making it a cornerstone example of scaling laws in NLP.
 
 
-=== mT5
-#gls("MT5") is a pre-trained language model developed by Google. It is based on the Transformer architecture and is designed for text-to-text transfer learning.
-
+=== #gls("MT5")
+Building on the architecture and pretraining paradigm established by #gls("T5"), the #gls("MT5") model by @MT5 extends these principles to the multilingual domain. While it retains the same encoder-decoder structure and leverages the same self-attention mechanisms, mT5 is specifically designed to operate effectively across a wide range of languages. This shift from a monolingual to a multilingual setting introduces several key modifications aimed at improving cross-lingual generalization and reducing English-centric bias. By training from scratch on a large, diverse multilingual corpus and refining its tokenization and training strategies, #gls("MT5") adapts the #gls("T5") framework to meet the challenges of truly global #gls("NLP"). \
+Instead of #gls("T5")'s original subword tokenizer, this model employs a SentencePiece unigram tokenizer trained on multilingual data spanning 101 languages. This change improves its ability to process non-English scripts more effectively .
+Unlike #gls("T5"), which excludes padding tokens from loss computation, this approach calculates gradients over the entire sequence, including padding. This contributes to greater robustness across diverse languages.
+Rather than building on an English-only pretrained model, it is trained from the ground up on the multilingual #gls("MC4") corpus. This avoids English-centric bias and enhances performance across a wide range of languages.
+The model does not rely on language tags or specialized embeddings to indicate the input language. It learns to process text based solely on content, fostering more language-independent representations. While the underlying encoder-decoder and self-attention mechanisms mirror those of #gls("T5"), these targeted adjustments significantly improve its effectiveness in multilingual contexts.
 
 
 == Evaluation Metrics
