@@ -42,13 +42,12 @@ $ w_(i j) = "softmax("w'_(i j)")" $
 $ y_i = sum_j w_(i j) v_j $
 
 
+=== T5
 
 
 === mT5
 #gls("MT5") is a pre-trained language model developed by Google. It is based on the Transformer architecture and is designed for text-to-text transfer learning.
 
-=== BERT
-#gls("BERT") is a pre-trained language model developed by Google.
 
 
 == Evaluation Metrics

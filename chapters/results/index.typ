@@ -104,16 +104,15 @@ In the table below, due to confusuing naming conventions, the #gls("POS") tagger
   )
 )
 
-== mT5 Pretraining <results_pretraining.sec> // TODO get config files 
-To see if it was possible to pretrain a faroese mT5 model, attempts were made to pretrain a custom mT5 model on a Faroese dataset. The dataset was a collection of wikipedia articles, blog posts 
-
-During experimentation with a reduced-capacity mT5 model, it became evident that the model's representational capacity was insufficient for the target task. Bitlinear seemed to have a stabilizing effect on the training process, \ \
+== mT5 Pretraining <results_pretraining.sec>
+To see if it was possible to pretrain a faroese mT5 model, attempts were made to pretrain a custom mT5 model on a Faroese dataset. The dataset was a collection of wikipedia articles, blog posts and the Faroese corpuses on Huggingface. \
+During experimentation with a reduced-capacity mT5 model, it became evident that the model's representational capacity was insufficient for the target task. Bitlinear seemed to have a stabilizing effect on the training process, but it was scrapped in the end in favour of a mT5-base to fit into the current framework used by Ordbogen. \ \
 #ex3_ol <ex3_ol>
-#ex3_graph <ex3_graph>
 
-Another pretraining was conducted using the larger mT5-base model. The training used the same dataset as the previous experiment. 
+#ex4_graph <ex4_graph>
+
+Another pretraining was conducted using the larger mT5-base model. The training used the same dataset as the previous experiment.
 #pretraining_graph <pretraining_graph>
-
 
 == mT5 Grammar Model <results_grammar.sec>
 
