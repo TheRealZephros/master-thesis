@@ -1,0 +1,72 @@
+mode: pt
+device: gpu
+precision: bf16
+eval_only: false
+predict_only: false
+seed: 2137
+wandb: null
+aim:
+  repo: /home/rool/nanoT5
+  experiment: faroeseT5
+  sync_repo: aim://aim.caracal.imada.sdu.dk
+  sync_args:
+    repeat: 60
+    verbosity: 2
+bitlinear:
+- weight_range: 1.58
+  weight_measure: AbsMedian
+  activation_range: 8
+  activation_measure: AbsMax
+  match_name: ''
+model:
+  klass: local_t5
+  name: google/mt5-base
+  overwrite:
+    dropout_rate: 0.0
+    d_ff: 1024
+    d_kv: 64
+    d_model: 384
+    num_decoder_layers: 6
+    num_heads: 2
+    num_layers: 6
+  add_config:
+    is_bf16: false
+  checkpoint_path: ''
+  random_init: true
+  compile: true
+  tokenizer: google/mt5-base
+data:
+  input_length: 512
+  mlm_probability: 0.15
+  mean_noise_span_length: 3.0
+  num_workers: 0
+  dataset: /mnt/storage/rool/data/fo/shuffled/train.jsonl
+  validation: /mnt/storage/rool/data/fo/shuffled/val.jsonl
+  language: null
+  remove_columns: []
+optim:
+  name: adamwscale
+  base_lr: 0.0005
+  batch_size: 128
+  total_steps: 85169
+  epochs: -1
+  warmup_steps: 1000
+  lr_scheduler: cosine
+  weight_decay: 0.0
+  grad_clip: 1.0
+  grad_acc: 2
+  final_cosine: 1.0e-05
+eval:
+  every_steps: 85169
+  steps: 10
+checkpoint:
+  every_steps: 10000
+logging:
+  neptune: false
+  neptune_creds:
+    project: null
+    api_token: null
+    tags: ''
+  every_steps: 1
+  grad_l2: true
+  weights_l2: true

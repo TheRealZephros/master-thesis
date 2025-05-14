@@ -104,7 +104,7 @@ In the table below, due to confusuing naming conventions, the #gls("POS") tagger
   )
 )
 
-== mT5 pretraining <results_pretraining.sec> // TODO get config files 
+== mT5 Pretraining <results_pretraining.sec> // TODO get config files 
 To see if it was possible to pretrain a faroese mT5 model, attempts were made to pretrain a custom mT5 model on a Faroese dataset. The dataset was a collection of wikipedia articles, blog posts 
 
 During experimentation with a reduced-capacity mT5 model, it became evident that the model's representational capacity was insufficient for the target task. Bitlinear seemed to have a stabilizing effect on the training process, \ \
