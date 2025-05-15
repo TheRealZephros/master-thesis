@@ -45,7 +45,22 @@ The softmax function is sensitive to the scale of its input values. To address t
 $ w'_(i j) = frac(q_i^#sym.tack.b k_j, sqrt(k)) $
 The rationale behind this scaling is rooted in how vector magnitudes behave in high-dimensional spaces. For example, a vector in $RR^k$ where every element is $c$ has a Euclidean length of $c sqrt(k)$ As a result, dot products tend to grow with $k$, potentially producing large values that cause the softmax to become sharply peaked, making it overly confident in just a few positions. Dividing by $sqrt(k)$ normalizes this effect, keeping the scale of the dot products consistent across different dimensions.
 
-
+Another important aspect of self-attention is the use of multiple attention heads. Instead of computing a single set of attention weights, multiple sets are computed in parallel, each with its own learned weight matrices. This allows the model to capture different types of relationships and dependencies in the data. The way this is done is by splitting the input vector into $h$ different parts, where $h$ is the number of attention heads. Each part is then used to compute a separate set of query, key, and value vectors. The outputs from all attention heads are concatenated and passed through a final linear transformation to produce the final output. This multi-head attention mechanism allows the model to learn richer representations by attending to different parts of the input sequence simultaneously.
+The multi-head attention mechanism can be expressed mathematically as follows: \
+If you have:
+- An input matrix $X in RR^(n times d_("model"))$, where $n$ is the number of tokens and $d_("model")$ is the dimension of each token vector.
+- $h$ attention heads.
+For each attention head $r$: \
++ Project the input into the query, key, and value vectors using separate learned weight matrices: \
+  $ Q = X W_(q)^(r) space.quad K = X W_(k)^(r) space.quad V = X W_(v)^(r) $
+  where $W_(q)^(r) "," W_(k)^(r) "," W_(v)^(r) in RR^(d_k times d_("model"))$ (often $d_k = d_("model")/h$). \ \
++ compute the scaled dot-product attention for each head: \
+  $ "Attention"^(r) = "softmax"(frac(Q K^#sym.tack.b,sqrt(d_k) ) ) V $ \
++ Concatinate the outputs of all heads: \
+  $ "Concat"("head"_1,..., "head"_h) $ \
++ Pass the result through a final linear projection: \
+  $ "MultiHead"(Q,K,V) = "Concatinate"("head"_1,..., "head"_h) W_o $ 
+  where $W_o$ is the Final projection matrix that maps concatenated head outputs back to $d_"model"$
 
 
 === #gls("T5") <background.t5.sec>
