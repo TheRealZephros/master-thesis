@@ -9,6 +9,7 @@
   (key: "DOCB", short: "DocBin", long: "spaCy DocBin"),
   (key: "ESTV", short: "ESTV", long: "An Extended Sequence Tagging Vocabulary for Grammatical Error Correction", ),
   (key: "FN", short: "FN", long: "False Negative"),
+  (key: "FFN", short: "FFN", long: "Feed Forward Neural Network"),
   (key: "FO_OB", short: "Føroysk orðabók", long: "Faroese Dictionary"),
   (key: "FP", short: "FP", long: "False Positive"),
   (key: "FRO", short: "Fróðskaparrit", long: "Faroese Scientific Journal"),

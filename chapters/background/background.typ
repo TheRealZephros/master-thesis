@@ -3,15 +3,25 @@
 #import "../../utils.typ": flex-caption, customRound
 
 
-
 = Scientific Background <background.sec>
 This section provides an overview of the background information necessary to understand the context of the study. It covers the key concepts and relevant research that have shaped the current state of the field.
 
 
 == Transformers <background.transformers.sec>
-Transformers are a class of deep learning models introduced by @Vaswani2017 that revolutionized #gls("NLP") and other sequential data tasks. Unlike #gls("RNN") and #gls("LSTM"), which process input sequentially, transformers leverage a self-attention mechanism that allows for parallelization and long-range dependency modeling.
+Transformers are a class of deep learning models introduced by @Vaswani2017 that revolutionized #gls("NLP") and other sequential data tasks. Unlike #gls("RNN") and #gls("LSTM"), which process input sequentially, transformers leverage a self-attention mechanism that allows for parallelization and long-range dependency modeling. Self-attention will be covered in more detail in
 At the core of the transformer architecture is the self-attention mechanism, which enables the model to weigh the importance of different words in a sequence, regardless of their position. This is complemented by positional encodings, which provide information about word order, addressing the lack of inherent sequentiality in self-attention. The transformer is composed of stacked encoder and decoder layers, each containing multi-head self-attention and feedforward layers with residual connections and layer normalization.
-Transformers have been the foundation for state-of-the-art NLP models, including #gls("BERT"), #gls("MT5") and perhaps the best known transformer to the general public, #gls("GPT"). These architectures have been widely applied in text generation, translation, and classification tasks, as well as in domains such as computer vision, protein structure prediction, and reinforcement learning. The scalability and effectiveness of transformers have driven their adoption across various fields, making them a cornerstone of modern deep learning research.
+Transformers have been the foundation for state-of-the-art NLP models, including #gls("BERT"), #gls("MT5") and perhaps the best known transformer to the general public, #gls("GPT"). These architectures have been widely applied in text generation, translation, and classification tasks, as well as in domains such as computer vision, protein structure prediction, and reinforcement learning. The scalability and effectiveness of transformers have driven their adoption across various fields, making them a cornerstone of modern deep learning research. \ \
+The original Transformer architecture proposed by @Vaswani2017 is built around an encoder-decoder structure: the encoder processes the input sequence, while the decoder generates the output. Both the encoder and decoder are composed of stacks of identical layers, six in the original model.
+Each encoder layer consists of two main components: a multi-head self-attention mechanism and a #gls("FFN"), each followed by a residual connection and layer normalization. Before entering the encoder, input tokens are passed through an embedding layer and enriched with positional encodings to inject information about the sequence order.
+Each decoder layer includes three subcomponents: a masked multi-head self-attention layer, to prevent attending to future tokens, a multi-head attention mechanism over the encoder outputs, and a #gls("FFN"). Like the encoder, each of these sublayers is followed by a residual connection and layer normalization.
+A visual overview of this architecture is provided in the diagram at @og_transformer. \ 
+#figure(
+  caption: flex-caption(
+  [The original transformer from "Attention Is All You Need". @Vaswani2017],
+  [The original transformer from "Attention Is All You Need".]
+  ),
+  image("../../images/og-transformer-architecture.png", width: 60%, height: auto)
+) <og_transformer>
 
 === Self-attention <background.self_attention.sec>
 Self-attention is a mechanism that allows a model to weigh the importance of different words in a sequence when making predictions. It computes a weighted sum of the input representations, where the weights are determined by the similarity between the words. This enables the model to capture long-range dependencies and relationships between words, regardless of their position in the sequence. Self-attention is a key component of transformer architectures, enabling them to process sequences in parallel and learn contextual representations effectively.
