@@ -28,7 +28,7 @@
 
 
 #let pretraining_graph = graph_plot(
-  pretraining_plot, (100%, 50%),
+  pretraining_plot, (100%, 30%),
   caption: flex-caption(
     [mT5-base pre-training loss],
     [mT5-base pre-training loss]
@@ -36,23 +36,23 @@
   stroke: blue,
 )
 #let ex3_graph = graph_plot(
-  ex3_plot, (100%, 50%),
+  ex3_plot, (100%, 30%),
   caption: flex-caption(
-    [mT5 pre-training performance metrics],
+    [smaller mT5 pre-training loss, Red is Bitlinear and Blue is the regular smaller mT5],
     [mT5 pre-training performance metrics]
   ),
   stroke: blue,
 )
 #let ex3_bl_graph = graph_plot(
-  ex3_bl_plot,(100%, 50%),
+  ex3_bl_plot,(100%, 30%),
   caption: flex-caption(
-    [mT5 pre-training performance metrics],
-    [mT5 pre-training performance metrics]
+    [smaller mT5 pre-training loss, Red is Bitlinear and Blue is the regular smaller mT5],
+    [smaller mT5 pre-training loss]
   ),
   stroke: red,
 )
 #let ex4_graph = graph_plot(
-  ex4_plot, (100%, 50%),
+  ex4_plot, (100%, 30%),
   caption: flex-caption(
     [mT5 pre-training performance metrics],
     [mT5 pre-training performance metrics]
@@ -62,5 +62,5 @@
 
 #let ex3_ol = overlay(
   (ex3_bl_graph, ex3_graph),
-  (100%, 50%),
+  (100%, 30%),
 )

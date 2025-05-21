@@ -4,12 +4,11 @@
 
 
 = Scientific Background <background.sec>
-This section provides an overview of the background information necessary to understand the context of the study. It covers the key concepts and relevant research that have shaped the current state of the field.
+This chapter provides an overview of the background information necessary to understand the context of the study. It covers the key concepts and relevant research that have shaped the current state of the field.
 
 
 == Transformers <background.transformers.sec>
-Transformers are a class of deep learning models introduced by @Vaswani2017 that revolutionized #gls("NLP") and other sequential data tasks. Unlike #gls("RNN") and #gls("LSTM"), which process input sequentially, transformers leverage a self-attention mechanism that allows for parallelization and long-range dependency modeling. Self-attention will be covered in more detail in
-At the core of the transformer architecture is the self-attention mechanism, which enables the model to weigh the importance of different words in a sequence, regardless of their position. This is complemented by positional encodings, which provide information about word order, addressing the lack of inherent sequentiality in self-attention. The transformer is composed of stacked encoder and decoder layers, each containing multi-head self-attention and feedforward layers with residual connections and layer normalization.
+Transformers are a class of deep learning models introduced by @Vaswani2017 that revolutionized #gls("NLP") and other sequential data tasks. Unlike #gls("RNN") and #gls("LSTM"), which process input sequentially, transformers leverage a self-attention mechanism that allows for parallelization and long-range dependency modeling. At the core of the transformer architecture is the self-attention mechanism, which enables the model to weigh the importance of different words in a sequence, regardless of their position. This is complemented by positional encodings, which provide information about word order, addressing the lack of inherent sequentiality in self-attention. The transformer is composed of stacked encoder and decoder layers, each containing multi-head self-attention and feedforward layers with residual connections and layer normalization. Self-attention will be covered in more detail in @background.self_attention.sec. \
 Transformers have been the foundation for state-of-the-art NLP models, including #gls("BERT"), #gls("MT5") and perhaps the best known transformer to the general public, #gls("GPT"). These architectures have been widely applied in text generation, translation, and classification tasks, as well as in domains such as computer vision, protein structure prediction, and reinforcement learning. The scalability and effectiveness of transformers have driven their adoption across various fields, making them a cornerstone of modern deep learning research. \ \
 The original Transformer architecture proposed by @Vaswani2017 is built around an encoder-decoder structure: the encoder processes the input sequence, while the decoder generates the output. Both the encoder and decoder are composed of stacks of identical layers, six in the original model.
 Each encoder layer consists of two main components: a multi-head self-attention mechanism and a #gls("FFN"), each followed by a residual connection and layer normalization. Before entering the encoder, input tokens are passed through an embedding layer and enriched with positional encodings to inject information about the sequence order.
@@ -86,7 +85,7 @@ Finally, the model family was released in multiple scales from #gls("T5")-Small 
 
 === #gls("MT5") <background.mt5.sec>
 Building on the architecture and pretraining paradigm established by #gls("T5"), the #gls("MT5") model by @MT5 extends these principles to the multilingual domain. While it retains the same encoder-decoder structure and leverages the same self-attention mechanisms, mT5 is specifically designed to operate effectively across a wide range of languages. This shift from a monolingual to a multilingual setting introduces several key modifications aimed at improving cross-lingual generalization and reducing English-centric bias. By training from scratch on a large, diverse multilingual corpus and refining its tokenization and training strategies, #gls("MT5") adapts the #gls("T5") framework to meet the challenges of truly global #gls("NLP"). \
-Instead of #gls("T5")'s original subword tokenizer, this model employs a SentencePiece unigram tokenizer trained on multilingual data spanning 101 languages. This change improves its ability to process non-English scripts more effectively .
+Instead of #gls("T5")'s original subword tokenizer, this model employs a SentencePiece unigram tokenizer trained on multilingual data spanning 101 languages. This change improves its ability to process non-English scripts more effectively.
 Unlike #gls("T5"), which excludes padding tokens from loss computation, this approach calculates gradients over the entire sequence, including padding. This contributes to greater robustness across diverse languages.
 Rather than building on an English-only pretrained model, it is trained from the ground up on the multilingual #gls("MC4") corpus. This avoids English-centric bias and enhances performance across a wide range of languages.
 The model does not rely on language tags or specialized embeddings to indicate the input language. It learns to process text based solely on content, fostering more language-independent representations. While the underlying encoder-decoder and self-attention mechanisms mirror those of #gls("T5"), these targeted adjustments significantly improve its effectiveness in multilingual contexts.
@@ -120,14 +119,47 @@ $
 upright(F)_(beta) = (1 + beta^2) * frac( #[Precision] * #[Recall], (beta^2 * #[Precision]) + #[Recall] )
 $
 
-=== Grammar Correction 
+== Grammar Error Correction 
+#gls("GEC") is the task of automatically detecting and correcting grammatical errors in written text. It is typically treated as a form of text-to-text transformation, where the goal is to convert grammatically incorrect input into a corrected version that adheres to the norms of the target language @Ng2014 @Bryant2017. #gls("GEC") systems are designed to address a wide range of error types, including but not limited to: \
+- Morphological errors (e.g., incorrect verb conjugation or noun inflection)
+- Syntactic errors (e.g., subject-verb disagreement, word order issues)
+- Orthographic and spelling errors
+- Punctuation errors
+- Lexical choice errors \ 
+The task was initially motivated by applications in second language learning and writing assistance @Leacock2014, but has since become relevant for broader NLP tasks, such as preprocessing noisy text in user-generated content or learner corpora for use in machine translation, summarization, and other downstream models.
+Approaches to #gls("GEC") have evolved from rule-based @Chodorow2010 @Rozovskaya2010 and statistical methods @Brockett2006 to neural network-based models, especially those based on the Transformer architecture @Vaswani2017. In many modern systems, #gls("GEC") is framed as either a sequence-to-sequence problem—similar to machine translation @Grundkiewicz2019 @Lichtarge2019, or as an edit-based classification task, where the model predicts a sequence of edits to transform the input into a correct output. The latter approach, exemplified by #gls("GECTOR") @Omelianchuk2020, has gained popularity due to its efficiency and strong performance on limited data.
+The performance of #gls("GEC") systems depends heavily on the availability of annotated corpora such as #gls("NUCLE") @Dahlmeier2013 or Lang-8 @Mizumoto2011 , which are largely limited to high-resource languages like English. This poses a significant barrier for low- and ultra-low-resource languages, where high-quality error-annotated corpora are rare or nonexistent. To address this, researchers have explored cross-lingual transfer @Rotman2022, data augmentation using synthetic errors @Xie2018, and multilingual pre-trained models like mBART @Liu2020 and #gls("MT5") @mt5.
+For this study , the focus is on an edit-based approach to #gls("GEC"). This approach turns #gls("GEC") into a sequence tagging task.
+
+=== Sequence Tagging <background.seq_tag.sec>
+Sequence tagging is a common approach in #gls("NLP") tasks, where the goal is to assign labels to each element in a sequence. This can be applied to various tasks, such as part-of-speech tagging, named entity recognition, and grammatical error correction. In the context of #gls("GEC"), sequence tagging involves predicting a sequence of edits that transform the input into a grammatically correct output. This approach allows for efficient processing and can leverage existing pre-trained models to improve performance on low-resource languages.
+Instead of rewriting the entire sentence, the model tags each token or span of tokens with a label. The labels will often fall into one of the following categories: \
+- *KEEP* — The token is correct and should be kept as is. \
+- *DELETE* — The token is incorrect and should be removed. \
+- *INSERT* — A new token should be inserted at this position. \
+- *REPLACE* — The token should be replaced with a different token. \
+
+These edit tags are typically learned through supervised training on annotated datasets, where each token in an erroneous sentence is aligned with its corresponding edit in the corrected sentence. Models like #gls("GECTOR") take this approach, using a transformer-based architecture fine-tuned on grammatical error correction tasks. By treating GEC as a sequence tagging problem rather than a generation problem, these models can be both more efficient and more interpretable.
+One major advantage of this approach is its ability to produce high-quality corrections with relatively small amounts of data, making it particularly well-suited for ultra-low-resource languages like Faroese. Additionally, the tagging process ensures a strong alignment with the original sentence, which helps preserve the writer's intent and style.
+This is especially important in applications like writing assistance, where maintaining the original meaning while correcting errors is crucial.
+The downside of this approach is that more complex errors, that require multiple edits or reordering of tokens, may be harder to capture. This means that problems like rephrasing or restructuring sentences may not be as effectively handled by a sequence tagging model, but since these errors require a lot of labaled data to train on, this is not a problem for this study, as this goes beyond the scope of what can realisticly be achieved. \
 
 
-=== Spelling <bg_spelling.sec>
+
+
+GEC in Low-Resource Languages
+Data scarcity issues and strategies.
+Cross-lingual transfer and multilingual models.
+
+Relevance to Faroese
+Motivating the choice of tools (e.g., spaCy, spelling models).
+Challenges of applying these methods to ultra-low resource settings.
+
+== Spelling <bg_spelling.sec>
 There are 2 categories of spelling errors, the first is a typographical error, the second is a cognitive error. Typographical errors are made my mistyping a word, while cognitive errors are made by a lack of understanding. A spelling error in the context of this study is an error that results in a word that is not in the faroese dictionary.
 
-==== Typographical Errors <bg_typo_errors.sec>
-Typographical errors can be split into 3 subcategories: \
+=== Typographical Errors <bg_typo_errors.sec>
+Typographical errors can be split into 4 subcategories: \
 *Transposition* errors can be made by transposing two adjacent characters in a word. \
 *Substitution* errors can be made by substituting a character in a word. \ 
 *Insertion* errors can be made by inserting a character into a word. \
@@ -137,6 +169,6 @@ Transposition errors are also very simple to make, since they only require permu
 
 #keyboard_typo <keyboard_typo>
 
-==== Cognitive Errors <bg_cog_errors.sec>
+=== Cognitive Errors <bg_cog_errors.sec>
 Theses errors are a bit more difficult to categorize than typographical errors, as the reason for the error is not always clear. Most spelling errors are phonetic spelling errors, where a word is spelled as it sounds, this can have many different causes. The most common phonetic errors are errors with *ð*. In most cases it is a silent letter, which often leads to it being omitted. When *ð* is pronounced it is often pronounced as a *v* which leads to a spelling error where *v* is written in place of a *ð*. A type of spelling errors that is both phonetic and because of an exception to a rule, is a vowel followed by a double consonant is short, and a long vowel is followed by a single consonant. This rule has some exceptions like in the words *skula* and *fram*, the first *u* in skula and the *a* in fram are short, but the words are spelled with a single consonant, which causes people to spell them like *skulla* and *framm*.
 Dialects will also often lead to phonetic spelling errors. The faroese language has many dialects, and some of them have different pronunciations of the same word. The northern dialect, such as the one in Klaksvík, pronounces *á* as *a*, which leads to spelling errors where *á* is written as *a*. And someone with a southern dialect, might pronounce *p* more softly than someone with a northern dialect, which leads to spelling errors where *p* is written as *b*. 

@@ -97,7 +97,7 @@
       center-side: context {
         [#counter(page).at(here()).first() of #(counter(page).at(query(<final-page>).first().location()).at(0))]
       },
-      right-side: text(fill: red)[#total-words words | #total-characters chars],
+      right-side: text(fill: red)[#total-words words | #total-characters chars], // TODO REMOVE THIS
     ),
     chic-separator(1pt),
     chic-offset(7pt),
@@ -107,20 +107,23 @@
 #set-page-properties()
 #counter(page).update(0)
 #include "chapters/introduction.typ"
+#pagebreak(weak: true)
 #include "chapters/background/background.typ"
+#pagebreak(weak: true)
 #include "chapters/materials.typ"
+#pagebreak(weak: true)
 #include "chapters/methods/index.typ"
+#pagebreak(weak: true)
 // #include "chapters/data_processing/data_processing.typ"
 // #include "chapters/design.typ"
 #include "chapters/results/index.typ"
-// #include "chapters/results2.typ"
+#pagebreak(weak: true)
 #include "chapters/discussion.typ"
+#pagebreak(weak: true)
 #include "chapters/conclusion.typ"
+#pagebreak(weak: true)
 #include "chapters/outlook.typ"
-
 #pagebreak(weak: true)
 #bibliography("ref.yml", title: [References], style: "apa")
-
 #pagebreak(weak: true)
-
 #include "chapters/appendix.typ"

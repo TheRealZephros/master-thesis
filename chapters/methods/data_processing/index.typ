@@ -18,18 +18,21 @@ The formats of the data vary depending on the source, and the data was collected
 
 === Data Cleaning & Preprocessing <data_cleaning.sec>
 The unlabeled data was cleaned using a mix of heuristics. To remove a lot of the foreign sentences, a blacklist of foreign characters was used to filter out sentences that contained these characters. Additionally a list of common danish and english words were used to remove foreign sentences. To get rid of some metadata, words and abbreviations like *img src*, *aspx*, *pid*, *newsid*, *html*, *date* were used to remove the sentences they occur in. Due to encoding errors in the data, a lot of the data was wrongly converted to ascii, but a lot of it could be reverse engineered by manually inspecting the data, and from context, get a mapping from the wrong encoding to the correct faroese character. For example the character *ð* was written as *Ã°* and the character *á* was written as *Ã¡* and so on. The *ð* character is also sometimes written as *đ*, so to make the dataset more uniform, it is converted to *ð*, which is the only one of them that can be written with a faroese keyboard without modifiers. The data was also cleaned by removing any html tags, and any other non-faroese characters. Some of the data has really long sentences, some of them up to 800.000 characters long, so they were split on the period character, excluding periods from abbreviations. All duplicate sentences were removed from the dataset. The dataset was shuffled to make sure the model doesn't overfit on the order of the data.
-The unlabeled dataset was saved as jsonl for pretraining of the mt5 model and as a txt file for further processing. The txt file was tokenized and saved as a doc in the spaCy format, by tokenizing the text, before corrupting it, a lot of time is saved in the corruption process. The corruption process will be covered in the data augmentation section.\ \ 
-
+The unlabeled dataset was saved as jsonl for pretraining of the mt5 model and as a txt file for further processing. Before initiating the corruption process, the input text is annotated with #gls("POS") and #gls("MORPH") tags using a SpaCy pipeline. The annotated text is stored in a #gls("DOC") object, which is subsequently encapsulated within a #gls("DOCB") container, serialized, and written to disk. By doing this before the corruption process, new errors can be added without having to annotate the text again, which ends up saving a lot of time. \ \ 
 
 ==== #gls("UD") Data <ud_data.sec>
-The labeled data from the faroese #gls("UD") repositories required minimal processing, it was saved in a single json file for easier inspection. Then all duplicate sentences were removed from the dataset. The json file was the converted to the spaCy format, which is a binary format used to train spacy models. It consists of a list of docs, where each doc contains sentences that are labeled, depending on what model you train. In this case, there were a few different files, the majority of them only had #gls("POS") and morphologizer labels, but some of them also had dependency labels, and some of them had lemmatizer labels. The files with #gls("POS") and #gls("MORPH") labels, had 6652 labeled faroese sentences, which add up to 9.3 MiB of data. The files with lemma labels had 1428 sentences, which added up to 756 KiB of data. And lastly the files with dependency parser labels had 3049 sentences which added up to 2.8 MiB of data.
-Each of the files was split into a training and a validation set, where 95% of the data was used for training and 5% was used for validation.
-==== Private Corpus from #gls("MTD") <private_corpus.sec>
+The labeled data from the Faroese #gls("UD") repositories required minimal preprocessing. All annotated sentences were collected into a single #gls("JSON") file to facilitate easier inspection and further processing. Duplicate sentences were then removed from the dataset. This #gls("JSON") file was subsequently converted into the spaCy training format, a binary format consisting of a list of documents, where each document includes one or more labeled sentences. The dataset was then split into training and validation sets, using a 95/5 split.
+
+==== Testset from #gls("MTD") <test_set.sec>
 The original corpus is in xml format where each sentence is a separate xml tag and each word and punctuation is a tag in the sentence. If a word or punctuation is corrected, a revision tag replaces the error and contains the original and corrected text.
 #errors_xml <private_corpus_xml>
 
-For each error in a sentence a pair of incorrect and correct sentences are generated. The incorrect sentence contains the error and the correct sentence is the same as the incorrect sentence, but with the error corrected. #ref(<inc_corr_sentences>) shows the sentences that are generated from the sentence in #ref(<private_corpus_xml>). \ \
+For each error in a sentence a pair of incorrect and correct sentences are generated. The incorrect sentence contains the error and the correct sentence is the same as the incorrect sentence, but with the error corrected. @inc_corr_sentences shows the sentences that are generated from the sentence in @private_corpus_xml. \ \
 #figure(
+  caption: flex-caption(
+    [Example of a sentence with an error and the corresponding correct sentence, Translation: "We went up the mountain tomorrow. We are going up the mountain tomorrow."],
+    [Example of a sentence with an error and the corresponding correct sentence]
+  ),
   grid(
     columns: 1,
     gutter: 5pt,
@@ -48,22 +51,15 @@ For each error in a sentence a pair of incorrect and correct sentences are gener
     ),
   )
 ) <inc_corr_sentences>
+Since the original sentences were written by students, a single word would sometimes contain multiple errors, so by manually inspecting the data, the errors were split into multiple sentences once again. An example of this is the sentence "Teir ætlaðu sær til eina #errHighlight("ærda") bygd, men blivu næstan vilstir uppi á fjøllunum, tí mjørkin kom." Here the word "ærda" contains two spelling mistakes, the *æ* should be an *a* and the *d* should be an *ð*.
+Another effect from the original sentences being written by students, is that they somtimes write very long running sentences, so the sentences were cut off in a way that preserved the meaning of the sentence and the context of the error, but removes the redundant parts of the sentence. An example of this, is the sentence: \ \
+Vit hoyra í byrjanini í stuttsøguni, at Maria vaknar, og tað fyrsta, hon hugsar, er: "Hvar er telefonin?" #errHighlight("og") so brúkar hon heilar 36 min. á telefonini, áðrenn hon vakir mannin Súna og sigur: "Klokkan er farin av sjey, vit hava forsovið okkum, kom upp!" \ \
+The error here is that *og* should be capitalized because of the preceding *?*, so it can be reduced to: \ \
+Tað fyrsta, hon hugsar, er: "Hvar er telefonin?" #errHighlight("og") so brúkar hon heilar 36 min. á telefonini. \ \
+This is done to make the sentences more concise and reduce the noise that comes from having overly long sentences.
 
 === Data Augmentation <data_augmentation.sec>
-The data is augmented by taking correct text and corrupting it. The corruption process is done by using a list of rules, that are applied to the correct sentence. The types of errors are ordered in a hierarchy, where a category can directly have errortypes or have subcategories. A subcategory has errors. The hierarchy is a way to organize the errors, so that the corruption process can be more precise where possible and in the cases where an error could belong to multiple error types, it is defined which error type has higher priority.
+The data is augmented by taking correct text and corrupting it. Using a set of rules, the text is corrupted by changing words, adding or removing words, and changing the order of words. The goal of this process is to create a more diverse dataset that can help the model learn to generalize better. The corruption process is done in a way that preserves the meaning of the text, but introduces errors that are similar to those that might be made by a human writer.
 
 ==== Corruption Process <corruption_process.sec>
-Before the corruption process can begin, the text is tokenized and annotated with #gls("POS") and #gls("MORPH") tags and saved in a #gls("DOC"). The #gls("DOC") is then put in a #gls("DOCB") which is serialized and written to a file. The first step in the corruption is to generate a json file that contains every corruption that can be made. Before distributing the corruptions into a training set, a distribution file, which is a json file that specifies the proportion of each errortype to introduce into the dataset, is used. The json file is then loaded and the corruptions are applied, with the proportions specified in the distribution file, to the text. The corrupted dataset is then shuffled to make sure the model doesn't overfit on the order of the data.
-
-Before initiating the corruption process, the input text is annotated with part-of-speech #gls("POS") and morphological #gls("MORPH") tags using a SpaCy pipeline. The annotated text is stored in a #gls("DOC") object, which is subsequently encapsulated within a #gls("DOCB") container, serialized, and written to disk. The first stage of the corruption process involves generating a JSON file that enumerates all possible corruption types. Prior to applying these corruptions, a separate distribution file, also in JSON format, is used to define the desired frequency of each error type within the dataset. This distribution file is then used to guide the application of corruptions to the text. Finally, the resulting corrupted dataset is shuffled to prevent the model from overfitting to any particular sequence or pattern in the data.
-
-
-===== Grammar <corruption_grammar.sec>
-
-
-#inflexion_json <inflexion_data>
-#lemmas <lemmas_data>
-
-
-===== Spelling <corruption_spelling.sec>
-
+The first stage of the corruption process involves generating a #gls("JSON") file that enumerates all possible corruption types. Prior to applying these corruptions, a separate distribution file, also in #gls("JSON") format, is used to define the desired frequency of each error type within the dataset. This distribution file is then used to guide the application of corruptions to the text. Finally, the resulting corrupted dataset is shuffled to prevent the model from overfitting to any particular sequence or pattern in the data.
