@@ -1,0 +1,81 @@
+id,errortype,num_tests,correct,incorrect,f025,precision,recall,hit
+2073,Abbreviations,10,100%,0%,1,1,1,100%
+1753,Accent,6,33.3%,33.3%,0.49,0.5,0.4,100%
+1597,Adjectives,67,10.4%,1.5%,0.61,0.88,0.1,71.4%
+1796,Adjectives - comparison,13,15.4%,15.4%,0.7,0.87,0.17,100%
+1734,Adverb or adjective,6,33.3%,0%,0.89,1,0.33,100%
+1381,Apostrophes,15,0%,33.3%,0.15,0.17,0.07,0%
+1451,Capital initial letter,147,65.3%,4.1%,0.83,0.84,0.65,100%
+1741,Case - preposition,94,3.2%,17%,0.12,0.12,0.13,0%
+1742,Case - verb,48,2.1%,4.2%,0.27,0.4,0.04,0%
+1425,Commas,9,11.1%,11.1%,0.19,0.67,0.02,0%
+1842,Commas - apposition,2,0%,0%,0,0,0,0%
+1744,Commas - conjunction,3,0%,0%,0,0,0,0%
+1825,Commas - extra,174,10.9%,17.2%,0.16,0.17,0.09,94.7%
+1839,Commas - listing,9,22.2%,11.1%,0.81,1,0.2,0%
+1838,Commas - missing,783,20.1%,8.7%,0.3,0.31,0.2,98.7%
+1819,Compound nonword,18,5.6%,5.6%,0.25,0.28,0.11,100%
+1389,Compound words,60,28.3%,5%,0.74,0.8,0.34,100%
+1431,Compound words - "-megin",7,71.4%,14.3%,0.93,0.95,0.72,100%
+2085,Compound words - with or without complement,108,0%,1.9%,0.24,0.81,0.02,0%
+1415,Confusing "í" and "ið",21,76.2%,0%,0.98,1,0.76,100%
+2071,Confusing "lítið" and "fá",1,0%,0%,0,0,0,0%
+1890,Confusing "loyvi" and "loyvt",1,100%,0%,1,1,1,100%
+1891,Confusing "meira" and "fleiri",4,50%,0%,1,1,1,100%
+1797,Confusing "tí" and "ta",2,0%,0%,0,0,0,0%
+1892,Confusing "vilja" and "hevði",3,0%,0%,0,0,0,0%
+1788,Conjunction,4,25%,50%,0.25,0.25,0.33,100%
+1887,Conjunction - extra,13,0%,7.7%,0,0,0,0%
+1773,Conjunction - missing,13,0%,7.7%,0,0,0,0%
+2093,Consonant confusion,5,0%,20%,0,0,0,0%
+1411,Dialog,6,0%,50%,0.22,0.25,0.08,0%
+1870,Double consonant,27,7.4%,3.7%,0.45,0.67,0.07,100%
+2003,Eth - byttet ð,10,30%,0%,0.92,1,0.4,100%
+1393,Eth - mangler ð,119,21.8%,8.4%,0.52,0.56,0.25,23.1%
+1395,Eth - tilføjet ð,108,13%,9.3%,0.51,0.6,0.15,71.4%
+1762,Gender,36,2.8%,2.8%,0.25,0.5,0.03,0%
+1385,Hyphen,17,0%,5.9%,0,0,0,0%
+1810,Important "ið",47,0%,6.4%,0.14,0.55,0.01,0%
+1399,Name - inflexions,64,1.6%,1.6%,0.09,0.13,0.02,0%
+1738,Nomen agensis,4,0%,25%,0,0,0,0%
+1599,Nouns,99,4%,6.1%,0.38,0.43,0.14,0%
+1791,Nouns - genetives,8,0%,12.5%,0,0,0,0%
+1793,Numeral - inflexions,3,0%,0%,0,0,0,0%
+1459,Numerals,23,4.3%,4.3%,0.6,0.85,0.11,100%
+1457,Numerals - large numbers,12,100%,0%,0.93,0.92,1,100%
+1641,Ordinal number,46,73.9%,6.5%,0.6,0.6,0.76,100%
+1775,Particle - important,3,33.3%,0%,0.9,1,0.34,0%
+1756,Particle - redundant,1,0%,0%,0,0,0,0%
+1439,Period,200,0%,12%,0.01,0.03,0,0%
+1801,Preposition,16,0%,18.8%,0,0,0,0%
+1800,Preposition - missing,5,0%,20%,0.32,0.32,0.32,0%
+1783,Pronoun - Antecedent Agreement,2,0%,0%,0,0,0,0%
+1794,Pronouns,16,0%,12.5%,0,0,0,0%
+1780,Pronouns - reflexive,6,0%,16.7%,0,0,0,0%
+1453,Proper noun,103,2.9%,5.8%,0.09,0.1,0.03,0%
+1820,Punctuation - abbreviation,2,100%,0%,1,1,1,0%
+1821,Punctuation - colon,15,6.7%,26.7%,0.23,0.25,0.12,0%
+1836,Punctuation - dialog,23,0%,26.1%,0,0,0,0%
+1465,Punctuation - exclamation mark,5,80%,0%,0.99,1,0.89,0%
+1854,Punctuation - missing space,9,0%,0%,0,0,0,0%
+1845,Punctuation - question mark,10,0%,20%,0,0,0,0%
+1823,Punctuation - semicolon,12,0%,8.3%,0,0,0,0%
+1877,Rep "ks" with "x",1,0%,0%,0,0,0,0%
+1894,Rep "mann" with "man",25,0%,4%,0,0,0,0%
+1875,Rep "rsk" and "rk",1,100%,0%,1,1,1,100%
+1869,Rep "um$" and "un$",3,33.3%,0%,0.89,1,0.33,100%
+1861,Spelling - "vera" and "verða",48,25%,12.5%,0.61,0.67,0.25,0%
+1687,Spelling mistake,66,9.1%,7.6%,0.15,0.16,0.08,0%
+1413,Spelling mistake - "hesa/hesi" with "hesu",7,0%,0%,0,0,0,0%
+1818,Spelling mistake - foreign words,3,0%,33.3%,0,0,0,0%
+1409,Spelling mistake - gi omlyd,19,52.6%,5.3%,0.9,0.92,0.63,100%
+1421,Spelling mistake - ki omlyd,14,92.9%,0%,0.82,0.81,1,100%
+1807,Subject - missing,8,0%,0%,0,0,0,0%
+1774,Verb - finit verbum,3,0%,0%,0,0,0,0%
+1784,Verb - infinitive,2,0%,0%,0,0,0,0%
+1736,Verb Subject agreement,20,15%,10%,0.51,0.6,0.15,0%
+1811,Verb Tense Inconsistent,2,0%,0%,0,0,0,0%
+1601,Verbs,71,35.2%,9.9%,0.66,0.69,0.38,96%
+2091,Vowel confusion,25,20%,16%,0.44,0.46,0.26,60%
+1633,Word confusion,9,0%,11.1%,0,0,0,0%
+1808,Word order,2,0%,0%,0,0,0,0%

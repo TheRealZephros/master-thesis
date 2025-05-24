@@ -126,4 +126,4 @@
 #pagebreak(weak: true)
 #bibliography("ref.yml", title: [References], style: "apa")
 #pagebreak(weak: true)
-#include "chapters/appendix.typ"
+#include "chapters/appendix/index.typ"
