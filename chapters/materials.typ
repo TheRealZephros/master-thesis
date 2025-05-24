@@ -30,10 +30,8 @@ The two Faroese #gls("UD") datasets used in this study are the @oft and @farpahc
 @farpahc is a conversion of the @farpahc_og corpus to the Universal Dependencies scheme using @ud_converter. @farpahc_og is a 53,000-word corpus consisting of three texts from the 19th and 20th centuries, originally manually parsed according to the @ppche annotation scheme. Two of these parsed texts were automatically converted to the UD format, resulting in the 40,000-word @farpahc treebank. Due to the historical nature of the source material, the grammar and vocabulary may diverge significantly from contemporary Faroese, which could limit the dataset's applicability to modern language use. \ \
 The files with #gls("POS") and #gls("MORPH") labels contain 6,652 Faroese sentences, totaling 9.3 MiB of data. The lemma-labeled files include 1,428 sentences (756 KiB), while the files annotated with dependency parser labels comprise 3,049 sentences, amounting to 2.8 MiB. \ \
 
-
 == Bendingar.fo <bendingar.sec>
 Bendingar.fo is a website, that hosts #gls("BEND") @bend_grunn. #gls("BEND") contains inflections, lemmas and morphological data for faroese words and names. Most words are taken from wordlists that were made for #gls("RÆTT") @rætt, that were taken from a faroese dictionary @fo_ordabók. The names are from the name list from #gls("MAL") @bend_grunn.
 
 == #gls("NLLB") <nllb.sec>
 The faroese dataset consists of multiple types of data primary #gls("BITEXT"), mined #gls("BITEXT") and monolingual Text. For faroese, the datasets consist of primary @nllb_fo_1 and mined bitext @nllb_fo_2. The primary #gls("BITEXT") corpora are publicly available parallel corpora from a variety of sources. The mined #gls("BITEXT") corpora are retrieved by large-scale #gls("BITEXT") mining. The mined data includes all the English-centric directions and a subset of non-English-centric directions. Only the faroese data is used in this study. 
-
