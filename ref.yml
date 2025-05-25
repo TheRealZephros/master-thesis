@@ -298,7 +298,7 @@ Bryant2017:
   issued: 2017
   page: 793-805
   url:
-    value: https://aclanthology.org/P17-1073
+    value: https://aclanthology.org/P17-1074/
 
 Chodorow2010:
   type: conference
@@ -307,12 +307,12 @@ Chodorow2010:
     - Claudia Leacock
     - Joel R. Tetreault
   title: "Detection of Grammatical Errors Involving Prepositions"
-  container-title: "NAACL HLT 2010 - The 2010 Annual Conference of the North American Chapter of the ACL"
-  issued: 2010
-  page: 353-358
+  container-title: "Proceedings of the Fourth ACL-SIGSEM Workshop on Prepositions"
+  issued: 2007
+  page: 25-30
   publisher: Association for Computational Linguistics
   url:
-    value: https://aclanthology.org/N10-1052
+    value: https://aclanthology.org/W07-1604/
 
 Dahlmeier2013:
   type: article
@@ -333,26 +333,26 @@ Grundkiewicz2019:
   author:
     - Roman Grundkiewicz
     - Marcin Junczys-Dowmunt
-  title: "Neural Grammatical Error Correction Systems with Unsampled Datasets"
+  title: "Neural Grammatical Error Correction Systems with Unsupervised Pre-training on Synthetic Data"
   container-title: "Proceedings of the 14th Workshop on Innovative Use of NLP for Building Educational Applications"
   publisher: Association for Computational Linguistics
   issued: 2019
   page: 252-263
   url:
-    value: https://aclanthology.org/W19-4430
+    value: https://aclanthology.org/W19-4427/
 
 Kaneko2020:
   type: article
   author:
     - Masahiro Kaneko
     - Mamoru Komachi
-  title: "Encoder-decoder models can learn syntactic and semantic phenomena in grammatical error correction"
+  title: "Encoder-Decoder Models Can Benefit from Pre-trained Masked Language Models in Grammatical Error Correction"
   container-title: "Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics"
   issued: 2020
   page: 7029-7035
   publisher: Association for Computational Linguistics
   url:
-    value: https://aclanthology.org/2020.acl-main.628
+    value: https://aclanthology.org/2020.acl-main.391/
 
 Leacock2014:
   type: book
@@ -364,7 +364,9 @@ Leacock2014:
   title: "Automated Grammatical Error Detection for Language Learners"
   publisher: Morgan & Claypool Publishers
   issued: 2014
-  doi: 10.2200/S00593ED1V01Y201401HLT024
+  doi: 10.1007/978-3-031-02153-4
+  url:
+    value: https://doi.org/10.1007/978-3-031-02153-4
 
 Lichtarge2019:
   type: conference
@@ -380,7 +382,7 @@ Lichtarge2019:
   issued: 2019
   page: 3291-3299
   url:
-    value: https://aclanthology.org/N19-1332
+    value: https://aclanthology.org/N19-1333/
 
 Liu2020:
   type: article
@@ -436,24 +438,28 @@ Omelianchuk2020:
     - Artem Chernodub
     - Oleksandr Skurzhanskyi
   title: "GECToR - Grammatical Error Correction: Tag, Not Rewrite"
-  container-title: "Proceedings of the 15th Workshop on Innovative Use of NLP for Building Educational Applications"
+  container-title: "Proceedings of the Fifteenth Workshop on Innovative Use of NLP for Building Educational Applications"
   publisher: Association for Computational Linguistics
   issued: 2020
   page: 163-170
   url:
-    value: https://aclanthology.org/2020.bea-1.17
+    value: https://aclanthology.org/2020.bea-1.16/
 
-Rotman2022:
+Yamashita2020:
   type: article
   author:
-    - Guy Rotman
-    - Reut Tsarfaty
-  title: "On the Transferability of Neural Grammatical Error Correction Models Across Languages"
-  container-title: "Transactions of the Association for Computational Linguistics"
-  issued: 2022
-  page: 1381-1398
+  - Ikumi Yamashita
+  - Satoru Katsumata
+  - Masahiro Kaneko
+  - Aizhan Imankulova
+  - Mamoru Komachi
+  title: "Cross-lingual Transfer Learning for Grammatical Error Correction"
+  container-title: "Proceedings of the 28th International Conference on Computational Linguistics"
+  issued: 2020
+  page: 4704-4715
+  publisher: International Committee on Computational Linguistics
   url:
-    value: https://aclanthology.org/2022.tacl-1.40
+    value: https://aclanthology.org/2020.coling-main.415/
 
 Rozovskaya2010:
   type: article
@@ -466,7 +472,7 @@ Rozovskaya2010:
   page: 74-82
   publisher: Association for Computational Linguistics
   url:
-    value: https://aclanthology.org/W10-1009
+    value: https://aclanthology.org/W10-1004/
 
 Xie2018:
   type: conference
@@ -482,4 +488,194 @@ Xie2018:
   page: 619-628
   publisher: Association for Computational Linguistics
   url:
-    value: https://aclanthology.org/N18-1063
+    value: https://aclanthology.org/N18-1057/
+
+Nivre2020:
+  type: article
+  title: "Universal Dependencies v2: An evergrowing multilingual treebank collection"
+  author: Joakim Nivre et al.
+  date: 2020
+  page: 4034-4043
+  publisher: Association for Computational Linguistics
+  booktitle: "Proceedings of the 12th Language Resources and Evaluation Conference (LREC 2020)"
+  url: https://aclanthology.org/2020.lrec-1.497/
+
+Petrov2012:
+  type: article
+  title: "A Universal Part-of-Speech Tagset"
+  author: 
+  - Slav Petrov
+  - Dipanjan Das
+  - Ryan McDonald
+  date: 2012
+  page: 2089-2096
+  publisher: Association for Computational Linguistics
+  booktitle: "Proceedings of the Eighth International Conference on Language Resources and Evaluation (LREC'12)"
+  url: https://aclanthology.org/L12-1115/
+
+Silveira2014:
+  type: article
+  title: "A Gold Standard Dependency Corpus for English"
+  author: Natalia Silveira et al.
+  date: 2014
+  page: 2897-2902
+  publisher: Association for Computational Linguistics
+  booktitle: "Proceedings of LREC 2014"
+  url: https://aclanthology.org/L14-1067/
+
+Tsarfaty2010:
+  type: article
+  title: "Statistical Parsing of Morphologically Rich Languages: What, How and Whither"
+  author: 
+  - Reut Tsarfaty
+  - Joakim Nivre
+  - Evelina Andersson
+  date: 2010
+  page: 1-12
+  booktitle: "Proceedings of the NAACL Workshop on Statistical Parsing of Morphologically Rich Languages"
+  url: https://aclanthology.org/W10-1401/
+
+Conneau2020:
+  type: article
+  title: "Unsupervised Cross-lingual Representation Learning at Scale"
+  author: Alexis Conneau et al.
+  date: 2020
+  page: 8440-8451
+  publisher: Association for Computational Linguistics
+  booktitle: "Proceedings of ACL 2020"
+  url: https://aclanthology.org/2020.acl-main.747
+
+Zeman2017:
+  type: article
+  title: "Universal Dependencies 2.1"
+  author: Daniel Zeman et al.
+  date: 2017
+  publisher: Association for Computational Linguistics
+  booktitle: "Proceedings of LREC 2017"
+  url: https://aclanthology.org/L17-1521/
+
+Nivre2015:
+  type: conference
+  author:
+    - Joakim Nivre
+  title: "Towards a Universal Grammar for Natural Language Processing"
+  container-title: "Proceedings of the 16th International Conference on Intelligent Text Processing and Computational Linguistics"
+  page: 3-16
+  date: 2015
+  doi: 10.1007/978-3-319-18111-0_1
+  url:
+    value: https://doi.org/10.1007/978-3-319-18111-0_1
+
+Jurafsky2021:
+  type: book
+  author:
+    - Daniel Jurafsky
+    - James H. Martin
+  title: "Speech and Language Processing"
+  edition: 3
+  publisher: Prentice Hall
+  date: 2021
+  url:
+    value: "https://web.stanford.edu/~jurafsky/slp3/"
+    date: 2025-05-22
+  
+Mcdonald2005:
+  type: article
+  author:
+    - Ryan McDonald
+    - Fernando Pereira
+    - Kiril Ribarov
+    - Jan Hajič
+  title: "Non-Projective Dependency Parsing using Spanning Tree Algorithms"
+  container-title: "Proceedings of the Conference on Human Language Technology and Empirical Methods in Natural Language Processing"
+  page: 523-530
+  date: 2005
+  url:
+    value: "https://aclanthology.org/H05-1066"
+    date: 2025-05-22
+    
+
+Dozat2017:
+  type: thesis
+  author:
+    - Timothy Dozat
+  title: "Arc-Factored Biaffine Dependency Parsing"
+  publisher: Stanford University
+  date: 2017
+  url:
+    value: "https://nlp.stanford.edu/~manning/dissertations/tim-dozat-dissertation-augmented.pdf"
+    date: 2025-05-22
+
+Honnibal2020:
+  type: article
+  author:
+    - Matthew Honnibal
+    - Ines Montani
+    - Sofie Van Landeghem
+    - Adriane Boyd
+  title: "spaCy: Industrial-strength Natural Language Processing in Python"
+  issued: 2020
+  DOI: 10.5281/zenodo.1212303
+  url:
+    value: https://doi.org/10.5281/zenodo.1212303
+
+spacy_dep:
+  type: misc
+  title: "spaCy Dependency Parsing"
+  url: 
+    value: "https://spacy.io/api/dependencyparser"
+    date: "2025-05-23"
+
+Yuan2016:
+  type: article
+  author:
+    - Zheng Yuan
+    - Ted Briscoe
+  title: "Grammatical error correction using neural machine translation"
+  container-title: "NAACL-HLT"
+  issued: 2016
+  page: 380-386
+  url: https://aclanthology.org/N16-1042/
+  doi: 10.18653/v1/N16-1042
+
+Junczys-Dowmunt:
+  type: article
+  author:
+    - Marcin Junczys-Dowmunt
+    - Roman Grundkiewicz
+    - Magdalena Guz
+    - Ondrej Bojar
+  title: "Approaching neural grammatical error correction as a low-resource machine translation task"
+  container-title: "Proceedings of NAACL-HLT"
+  issued: 2018
+  page: 595-606
+  url: https://aclanthology.org/N18-1055/
+  doi: 10.18653/v1/N18-1055
+
+Phan2020:
+  type: article
+  author:
+  - Trong Huy Phan
+  - Kazuma Yamamoto
+  title: "Resolving Class Imbalance in Object Detection with Weighted Cross Entropy Losses"
+  issued: 2020
+  url: 
+    value: https://arxiv.org/abs/2006.01413
+    date: "2025-05-24"
+  doi: 10.48550/arXiv.2006.01413
+
+guo2024:
+  type: article
+  author:
+    - Li Guo
+    - Keith Ross
+    - Zifan Zhao
+    - George Andriopoulos
+    - Shuyang Ling
+    - Yufeng Xu
+    - Zixuan Dong
+  title: "Cross Entropy versus Label Smoothing: A Neural Collapse Perspective"
+  issued: 2024
+  url:
+    value: "https://arxiv.org/abs/2402.03979"
+    date: "2025-05-24"

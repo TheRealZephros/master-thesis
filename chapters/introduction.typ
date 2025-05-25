@@ -5,7 +5,7 @@
 
 = Introduction <introduction.sec>
 The development of large-scale language models has seen remarkable progress in recent years, but this progress has largely been concentrated in high-resource languages. Languages with limited digital presence, often referred to as ultra-low resource languages, remain underrepresented in #gls("NLP") research and tools. This thesis investigates the feasibility of developing foundational language models for such languages, with a focus on Faroese. Faroese, spoken by approximately 70,000 people, presents a number of challenges for #gls("NLP") due to the scarcity of annotated corpora, linguistic tools, and training data. The primary goal of this work is to assess what kinds of language models are realistically achievable for Faroese by surveying the available data and exploring suitable modeling approaches. \ \
-Given the constraints of the available resources, this study focuses on developing a #gls("GEC") model for Faroese—a foundational component for many downstream NLP tasks. To support this goal, a spaCy-based #gls("POS") tagger and morphologizer were trained using existing Faroese Universal Dependencies datasets. These tools provide essential linguistic annotations that can enhance the performance of a #gls("GEC") system. In parallel, a spelling model was explored as a complementary resource, aimed at addressing orthographic errors that often co-occur with grammatical mistakes. Preliminary investigations were also carried out into training a lemmatizer and a dependency parser to further support grammatical analysis. \ \
+Given the constraints of the available resources, this study focuses on developing a #gls("GEC") model for Faroese, a foundational component for many downstream NLP tasks. To support this goal, a spaCy pipeline will be developed using Faroese Universal Dependencies datasets. The aim is to train a #gls("POS") tagger, morphologizer, lemmatizer and a dependency parser to support grammatical analysis. This will provide essential linguistic annotations that can enhance the performance of a #gls("GEC") system. A spelling model will be explored as a complementary resource, aimed at addressing orthographic errors that often co-occur with grammatical mistakes. \ \ 
 This thesis aims to contribute a practical perspective on the development of core language models in settings where data is scarce, providing insights into model performance, data requirements, and potential paths forward for #gls("NLP") in ultra-low resource language contexts.
 #pagebreak(weak: true)
 
@@ -26,7 +26,7 @@ This thesis aims to contribute a practical perspective on the development of cor
 //   columns: 3,
 //   table.header(..data.at(0).keys().map(k => [*#k*])),
 //   ..data.map(row => row.values().map(v => [#v])).flatten()
-  
+
 // )
 // == Reader's Guide
 // Læses optimalt i two-spread

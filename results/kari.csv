@@ -1,0 +1,78 @@
+id,errortype,num_tests,correct,incorrect,f025,precision,recall,hit
+2073,Abbreviations,10,0%,10%,0,0,0,0%
+1753,Accent,6,16.7%,50%,0.24,0.25,0.17,100%
+1597,Adjectives,67,29.9%,6%,0.59,0.63,0.31,90%
+1796,Adjectives - comparison,13,0%,46.2%,0.79,0.82,0.47,0%
+1734,Adverb or adjective,6,0%,16.7%,0,0,0,0%
+1381,Apostrophes,15,0%,0%,0,0,0,0%
+1451,Capital initial letter,150,60.7%,8.7%,0.36,0.35,0.61,98.9%
+1741,Case - preposition,94,8.5%,27.7%,0.15,0.16,0.08,0%
+1742,Case - verb,48,8.3%,16.7%,0.27,0.31,0.09,0%
+1425,Commas,9,0%,22.2%,0,0,0,0%
+1842,Commas - apposition,2,0%,100%,0,0,0,0%
+1744,Commas - conjunction,3,0%,0%,0,0,0,0%
+1825,Commas - extra,174,23.6%,16.1%,0.25,0.26,0.19,100%
+1839,Commas - listing,9,11.1%,22.2%,0.17,0.2,0.05,0%
+1838,Commas - missing,783,0.6%,23.1%,0.02,0.02,0.01,60%
+1819,Compound nonword,18,0%,11.1%,0,0,0,0%
+1389,Compound words,170,17.6%,11.8%,0.71,0.85,0.19,93.3%
+1431,Compound words - "-megin",7,0%,0%,0,0,0,0%
+1415,Confusing "í" and "ið",21,95.2%,0%,0.87,0.87,0.95,100%
+2071,Confusing "lítið" and "fá",1,0%,0%,0,0,0,0%
+1890,Confusing "loyvi" and "loyvt",1,0%,0%,0,0,0,0%
+1891,Confusing "meira" and "fleiri",4,0%,0%,0,0,0,0%
+1797,Confusing "tí" and "ta",2,50%,0%,0.5,0.5,0.5,100%
+1892,Confusing "vilja" and "hevði",3,0%,0%,0,0,0,0%
+1788,Conjunction,4,25%,0%,0.47,0.5,0.25,100%
+1887,Conjunction - extra,13,0%,23.1%,0.45,0.75,0.06,0%
+1773,Conjunction - missing,13,0%,7.7%,0,0,0,0%
+1411,Dialog,6,0%,66.7%,0.12,0.13,0.1,0%
+1870,Double consonant,27,3.7%,11.1%,0.19,0.25,0.04,0%
+2003,Eth - byttet ð,10,20%,0%,0.59,0.67,0.2,50%
+1393,Eth - mangler ð,120,45%,5.8%,0.79,0.83,0.45,0%
+1395,Eth - tilføjet ð,108,29.6%,7.4%,0.65,0.7,0.3,84.4%
+1762,Gender,36,38.9%,11.1%,0.59,0.61,0.4,0%
+1385,Hyphen,17,5.9%,5.9%,0.23,0.5,0.02,100%
+1810,Important "ið",47,0%,27.7%,0,0,0,0%
+1399,Name - inflexions,64,1.6%,42.2%,0.06,0.06,0.05,0%
+1738,Nomen agensis,4,0%,0%,0,0,0,0%
+1599,Nouns,99,34.3%,13.1%,0.63,0.67,0.32,88.2%
+1791,Nouns - genetives,8,0%,12.5%,0,0,0,0%
+1793,Numeral - inflexions,3,66.7%,0%,0.97,1,0.67,100%
+1459,Numerals,23,0%,0%,0,0,0,0%
+1457,Numerals - large numbers,12,33.3%,0%,0.92,1,0.42,100%
+1641,Ordinal number,46,4.3%,37%,0.07,0.07,0.04,100%
+1775,Particle - important,3,0%,0%,0,0,0,0%
+1756,Particle - redundant,1,0%,0%,0,0,0,0%
+1439,Period,200,0%,27.5%,0.06,0.08,0.01,0%
+1801,Preposition,16,18.8%,12.5%,0.4,0.43,0.19,100%
+1800,Preposition - missing,5,20%,40%,0.22,0.33,0.04,100%
+1783,Pronoun - Antecedent Agreement,2,0%,0%,0,0,0,0%
+1794,Pronouns,16,31.3%,6.3%,0.65,0.71,0.28,80%
+1780,Pronouns - reflexive,6,0%,16.7%,0,0,0,0%
+1453,Proper noun,103,23.3%,7.8%,0.51,0.54,0.25,0%
+1820,Punctuation - abbreviation,2,0%,0%,0,0,0,0%
+1821,Punctuation - colon,15,6.7%,20%,0.35,0.38,0.17,0%
+1836,Punctuation - dialog,23,0%,13%,0,0,0,0%
+1465,Punctuation - exclamation mark,5,100%,0%,1,1,1,0%
+1854,Punctuation - missing space,9,0%,66.7%,0.42,0.5,0.11,0%
+1845,Punctuation - question mark,10,0%,0%,0,0,0,0%
+1823,Punctuation - semicolon,12,0%,16.7%,0,0,0,0%
+1877,Rep "ks" with "x",1,0%,0%,0,0,0,0%
+1894,Rep "mann" with "man",25,0%,0%,0,0,0,0%
+1875,Rep "rsk" and "rk",1,100%,0%,1,1,1,100%
+1869,Rep "um$" and "un$",3,33.3%,66.7%,0.35,0.33,1,100%
+1861,Spelling - "vera" and "verða",48,4.2%,22.9%,0.08,0.09,0.04,0%
+1687,Spelling mistake,66,24.2%,7.6%,0.47,0.5,0.23,0%
+1413,Spelling mistake - "hesa/hesi" with "hesu",7,57.1%,0%,0.57,0.57,0.57,0%
+1818,Spelling mistake - foreign words,3,0%,0%,0,0,0,0%
+1409,Spelling mistake - gi omlyd,19,57.9%,0%,0.89,0.92,0.58,81.8%
+1421,Spelling mistake - ki omlyd,14,92.9%,0%,0.87,0.87,0.93,100%
+1807,Subject - missing,8,12.5%,12.5%,0.84,0.97,0.27,100%
+1774,Verb - finit verbum,3,0%,0%,0.75,1,0.15,0%
+1784,Verb - infinitive,2,0%,0%,0,0,0,0%
+1736,Verb Subject agreement,20,20%,20%,0.28,0.29,0.21,0%
+1811,Verb Tense Inconsistent,2,0%,50%,0,0,0,0%
+1601,Verbs,71,57.7%,8.5%,0.54,0.54,0.63,90.2%
+1633,Word confusion,9,55.6%,11.1%,0.62,0.63,0.56,100%
+1808,Word order,2,0%,0%,0,0,0,0%
