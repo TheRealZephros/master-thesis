@@ -1,4 +1,3 @@
-id,errortype,num_tests,correct,incorrect,f025,precision,recall,hit
 2073,Abbreviations,10,0%,10%,0,0,0,0%
 1753,Accent,6,16.7%,50%,0.24,0.25,0.17,100%
 1597,Adjectives,67,29.9%,6%,0.59,0.63,0.31,90%

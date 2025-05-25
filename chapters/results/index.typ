@@ -5,6 +5,9 @@
 
 #let spacy = json("../../results/spacy_morph_tag.json")
 #let stanza = json("../../results/stanza-fo_performance.json")
+#let top_f_score = csv("../../results/top_f_score.csv")
+
+
 
 = Results <Results.sec>
 This chapter presents the results of the experiments conducted in this study. The results are organized into sections: Each section provides a detailed analysis of the performance of the models and the evaluation metrics used to assess their effectiveness.
@@ -124,17 +127,26 @@ Another pretraining was conducted using the larger mT5-base model. The training 
 #pretraining_graph <pretraining_graph>
 This time the training was stable and the model was able to learn from the data. The training was stopped after one epoch, which is 81203 steps, but a checkpoint was extracted after 20,000 steps to work on finetuning. The loss plot can be seen on @pretraining_graph.
 
-
 == mT5 Grammar Model <results_grammar.sec>
 Two #gls("MT5")-base models were trained for grammar correction. From a naming convention at Ordbogen, the models are named four letter names in the native language. The first model in named Kári(Kari internally because danes dont know how to pronounce or write accents), and the second model is named Bára(Bara internally for the same reason). The models were trained on different datasets and using different corruption methods. Further details about the datasets and corruption methods can be found in each of their sections, @results_grammar__kari.sec and @results_grammar__bara.sec. The models were trained using the same training parameters. // TODO add training parameters
-
-
 
 === Kári <results_grammar__kari.sec>
 Kári was the first model trained, it was trained on 4.4M sentences, This dataset consisted of everything that was available at the time, this is everything on Hugging Face, #gls("MTD")s website and and github repository, #gls("NLLB"), Liebzig corpora and scraped articles from @faroe_uni_press. The dataset was cleaned as described in @data_cleaning.sec and split into 95% training and 5% validation, 5% of the training data was un-corrupted.
 The full table with results can be seen in @appendix.kari. \ \
+When looking at the error types, where the model performed best
 
-
+#figure(
+  table(
+    columns: 9,
+    fill: (_, y) => if calc.odd(y) { gray.lighten(90%) },
+    stroke: none,
+    table.hline(),
+    table.header( [*ID*], [*Error Type*], [*Num Tests*], [*Correct*], [*Incorrect*], [*$F_(0.25)$*], [*Precision*], [*Recall*], [*Hit*]),
+    table.hline(),
+    ..top_f_score.flatten(),
+    table.hline()
+  )
+) <results.kári.top_f_score>
 
 The biggest problem with Kári was that the dataset it was trained on was of too poor quality, and this put a limit on how well the model could learn. 
 Another issue was the corruption method was too broad, and errors with genderand tense were made in cases where, from the context, its not possible to say if one is more grammatically correct than the other. An example of this is a sentence like "Hann er heima." (He is home.), an error could be introduced on "Hann" (He) where it's changed to "Hon" (She) or "er" (is) to "var" (was), errors like this will just confuse the model and encourage unnecessary correction, and this could be seen clearly through manual inspection when running the testset. Additionally the model would lowercase names, which causes problems in a lot of testsets, and makes it difficult to evaluate if the model is actually bad at the errortype being tested, or if its making wrong predictions because of the names being lowercased.
