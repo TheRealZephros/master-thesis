@@ -1,2 +1,4 @@
-== Development Process <methods.development_process.sec>
+#import "@preview/glossarium:0.5.1": gls, glspl
+#import "../../../utils.typ": flex-caption, customRound
 
+== Development Process <methods.development_process.sec>

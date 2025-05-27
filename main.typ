@@ -114,11 +114,7 @@
 #pagebreak(weak: true)
 #include "chapters/methods/index.typ"
 #pagebreak(weak: true)
-// #include "chapters/data_processing/data_processing.typ"
-// #include "chapters/design.typ"
 #include "chapters/results/index.typ"
-#pagebreak(weak: true)
-#include "chapters/discussion.typ"
 #pagebreak(weak: true)
 #include "chapters/conclusion.typ"
 #pagebreak(weak: true)

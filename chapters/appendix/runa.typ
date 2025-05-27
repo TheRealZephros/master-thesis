@@ -1,5 +1,5 @@
-#let data = csv("../../results/bara.csv", )
-== Bára <appendix.bara>
+#let data = csv("../../results/runa.csv", )
+== Kári <appendix.runa>
 #show figure: set block(breakable: true)
 #figure(
   table(
@@ -12,4 +12,4 @@
     ..data.flatten(),
     table.hline()
   )
-)
+) 

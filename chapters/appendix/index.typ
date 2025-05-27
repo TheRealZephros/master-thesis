@@ -46,5 +46,7 @@
 #pagebreak(weak: true)
 #include "bara.typ"
 #pagebreak(weak: true)
+#include "runa.typ"
+#pagebreak(weak: true)
 
 <final-page>
