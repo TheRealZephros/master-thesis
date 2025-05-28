@@ -5,10 +5,7 @@
 
 
 === #gls("POS") Tagger & Morphologizer <pos_morph.sec>
-
-
 The #gls("POS") tagger and morphologizer were trained on the same dataset, greater detail about the dataset can be seen in @ud.sec. 
-
 
 On @pos_morph_comp, is a comparison of accuracy between the spaCy #gls("POS") tagger and morphologizer, trained for this thesis and the faroese Stanza model. 
 For the sake of clarity, the metrics on @pos_morph_comp, will be explained: The "Tag" refers to the fine-grained #gls("POS") tag that is predicted by the #gls("POS") tagger, this is the attribute that can be accessed by a tokens tag attribute. The #gls("POS") refers to the coarse-grained #gls("POS") tag, that is predicted by the morphologizer. The #gls("MORPH") refers to the morphological features that are predicted by the morphologizer.
