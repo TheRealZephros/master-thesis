@@ -2,7 +2,7 @@
 #import "../../../utils.typ": flex-caption, customRound
 
 === Fine-tuning
-The fine-tuning process was conducted using Ordbogen's custom framework for training #gls("MT5") models, built on top of the Hugging Face Transformers library. This framework facilitated the integration of a sequence-to-sequence #gls("S2S") modeling approach, in which the model learns to generate corrected text from input sentences containing grammatical or spelling errors. \
+The fine-tuning process was conducted using Ordbogen's custom training framework. This framework facilitated the integration of a #gls("S2S") modeling approach, in which the model learns to generate corrected text from input sentences containing grammatical or spelling errors. \
 The model was trained with the dual objective of both correcting errors in the input text and predicting the corresponding error types. This output format aligns with recent developments in explainable #gls("GEC") models, where corrections are annotated with specific categories for improved interpretability and evaluation. \ 
 The following hyperparameters were used during fine-tuning:
 - *Learning rate*: $1e^(-05)$
