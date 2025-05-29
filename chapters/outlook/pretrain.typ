@@ -1,4 +1,6 @@
-
-
+#import "@preview/glossarium:0.5.1": gls, glspl
 
 == Pretraining Faroese Models <outlook.pretrain.sec>
+Pretraining large language models remains a significant challenge for Faroese due to the substantial data requirements inherent in such models. High-quality pretraining not only demands a large volume of text, but also data that is linguistically diverse, well-formed, and representative of the language's real-world usage. Unfortunately, the dataset used in this study did not meet these standards, and its relatively low quality likely limited the effectiveness of the pretraining process. \
+Despite these constraints, the use of a standard #gls("MT5")-base model, without Faroese-specific pretraining, yielded reasonably strong results in downstream tasks. This suggests that leveraging existing multilingual models can be a viable path forward, especially in low-resource settings. Looking ahead, exploring pre-trained models that are more closely aligned with Faroese, such as those trained on typologically similar Nordic or Germanic languages, could offer better transfer performance and reduce the dependency on large-scale Faroese corpora. \
+Ultimately, while fully training large models for Faroese from scratch may remain out of reach for now, strategic use of multilingual or regional models, coupled with targeted improvements in training data quality, holds promise for future progress.

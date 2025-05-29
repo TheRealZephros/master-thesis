@@ -1,4 +1,6 @@
-
-
+#import "@preview/glossarium:0.5.1": gls, glspl
 
 == Lemmatizer <outlook.lemma.sec>
+The development of a lemmatizer for Faroese remains an open challenge. In this study, the dataset used was too limited in size to produce a lemmatization model with reliable performance. However, the path forward appears promising. Unlike more complex linguistic tasks, lemmatization generally does not require deep semantic understanding, making it more accessible for native speakers to contribute to the annotation process. \
+The existing annotated datasets used for #gls("POS") tagging and morphological analysis could serve as a strong foundation. Since these datasets already contain rich grammatical information, extending them with lemma annotations would be a relatively low-effort yet high-impact task. While conceptually straightforward, the process is time-consuming, which is why it was not undertaken as part of this thesis. \
+With community involvement or targeted annotation efforts, it should be feasible to significantly expand the lemmatization dataset and train a model that meets practical standards. By building on the infrastructure already in place and leveraging native speaker expertise, Faroese could achieve a robust lemmatization tool to support further #gls("NLP") development in the language.

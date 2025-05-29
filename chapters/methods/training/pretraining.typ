@@ -4,7 +4,7 @@
 === Pre-training
 The pre-training of the #gls("MT5") model was conducted using the Nano#gls("T5") framework @nawrot, a lightweight and flexible training infrastructure optimized for training #gls("T5")-based models at scale. The model was trained from scratch on Faroese using a span corruption objective, similar to that introduced in the original #gls("T5") model @T5, where spans of text are masked and the model is trained to generate the missing content. This objective allows the model to learn both syntactic and semantic representations in a self-supervised manner.\
 Due to the lack of existing Faroese language models, the weights were randomly initialized. The training was carried out using the following hyperparameters:
-- *Model*: mt5-base
+- *Model*: #gls("MT5")-base
 - *Precision*: bf16
 - *Input length*: 512
 - *Masked language modeling probability*: 0.15

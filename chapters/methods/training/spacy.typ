@@ -1,10 +1,9 @@
 #import "@preview/glossarium:0.5.1": gls, glspl
-#import "../../../utils.typ": flex-caption, customRound
 
 === spaCy #gls("POS") Tagger and Morphologizer <spacy_pos.sec>
 The #gls("POS") tagger and morphologizer were trained using a spaCy pipeline built around a transformer architecture, which served as a shared encoder for all downstream linguistic components. Specifically, the pipeline leveraged the #gls("MBERT")-cased model as a shared transformer backbone. This choice enabled the model to benefit from multilingual knowledge transfer while learning contextual embeddings adapted to Faroese through fine-tuning.
 The training was carried out using the following hyperparameters:
-- *Model*: bert-base-multilingual-cased
+- *Model*: #gls("MBERT")-cased
 - *Optimizer*: AdamW
 - *Weight decay*: 0.01
 - *Gradient clipping*: 1.0

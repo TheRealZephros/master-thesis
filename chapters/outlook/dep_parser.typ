@@ -1,4 +1,6 @@
-
-
+#import "@preview/glossarium:0.5.1": gls, glspl
 
 == Dependency Parser <outlook.dep_parser.sec>
+The development of a reliable dependency parser for Faroese remains a significant challenge. Current models demonstrate insufficient accuracy for practical use, largely due to the very limited size of the available training dataset. High-quality dependency parsing requires precise syntactic annotation, a task that demands advanced linguistic expertise, something that makes dataset creation particularly difficult in a low-resource language context. \
+One potential avenue for progress could be integrating the creation of a syntactically annotated corpus into academic projects. For instance, a master's thesis focused on Faroese dependency annotation could make a meaningful contribution. However, the number of Faroese master's students in relevant fields is extremely limited. \
+An alternative approach could involve engaging top-performing bachelor's students, either through supervised thesis projects or credited self-study modules. While bachelor students may require more hands-on supervision and guidance, this route may still be viable, especially with clear annotation guidelines and expert support. Over time, such initiatives could help gradually build the foundational resources needed to develop a robust Faroese dependency parser.
