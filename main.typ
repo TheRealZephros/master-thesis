@@ -118,7 +118,7 @@
 #pagebreak(weak: true)
 #include "chapters/conclusion.typ"
 #pagebreak(weak: true)
-#include "chapters/outlook.typ"
+#include "chapters/outlook/index.typ"
 #pagebreak(weak: true)
 #bibliography("ref.yml", title: [References], style: "apa")
 #pagebreak(weak: true)

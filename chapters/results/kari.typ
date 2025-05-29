@@ -5,7 +5,6 @@
 #let eth = csv("../../results/ð_errors.csv")
 #let inflexions = csv("../../results/inflexions.csv")
 
-
 === Kári <results_grammar__kari.sec>
 Kári was the first model trained, it was trained on 4.4M sentences, This dataset consisted of everything that was available at the time, this is everything on Hugging Face, #gls("MTD")s website and and github repository, #gls("NLLB"), Liebzig corpora and scraped articles from @faroe_uni_press. The dataset was cleaned as described in @data_cleaning.sec and split into 95% training and 5% validation, 5% of the training data was un-corrupted.
 The full table with results can be seen in @appendix.kari. \ \

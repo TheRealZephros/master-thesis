@@ -33,6 +33,7 @@
   (key: "MAL", short: "Málráðið", long: "The Faroese Language Council"),
   (key: "MBART", short: "mBART", long: "Multilingual Bidirectional and Auto-Regressive Transformers"),
   (key: "MBERT", short: "mBERT", long: "Multilingual Bidirectional Encoder Representations from Transformers"),
+  (key: "MLM", short: "MLM", long: "Masked Language Modeling"),
   (key: "MC4", short: "mC4", long: "Multilingual Colossal Clean Crawled Corpus"),
   (key: "MLP", short: "MLP", long: "Multilayer Perceptron"),
   (key: "MORPH", short: "MORPH", long: "Morphologizer"),

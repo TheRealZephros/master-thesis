@@ -61,5 +61,5 @@ This is done to make the sentences more concise and reduce the noise that comes 
 === Data Augmentation <data_augmentation.sec>
 The data is augmented by taking correct text and corrupting it. Using a set of rules, the text is corrupted by changing words, adding or removing words, and changing the order of words. The goal of this process is to create a more diverse dataset that can help the model learn to generalize better. The corruption process is done in a way that preserves the meaning of the text, but introduces errors that are similar to those that might be made by a human writer.
 
-==== Corruption Process <corruption_process.sec>
+==== Corruption Process <corruption_process.sec> // TODO note that spelling used a grammar corupted dataset
 The first stage of the corruption process involves generating a #gls("JSON") file that enumerates all possible corruption types. Prior to applying these corruptions, a separate distribution file, also in #gls("JSON") format, is used to define the desired frequency of each error type within the dataset. This distribution file is then used to guide the application of corruptions to the text. Finally, the resulting corrupted dataset is shuffled to prevent the model from overfitting to any particular sequence or pattern in the data.
