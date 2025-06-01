@@ -4,7 +4,7 @@
 
 #let errors_xml = data(
   caption: flex-caption(
-    [An example of how a sentence in the private corpus is formatted (this is not a real sentence from the corpus)],
+    [An example of how a sentence in the private corpus is formatted (this is not a real sentence from the corpus, just a minimal example)],
     [An example of how a sentence in the private corpus is formatted]
   ),
  ```xml

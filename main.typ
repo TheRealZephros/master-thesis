@@ -97,7 +97,6 @@
       center-side: context {
         [#counter(page).at(here()).first() of #(counter(page).at(query(<final-page>).first().location()).at(0))]
       },
-      right-side: text(fill: red)[#total-words words | #total-characters chars], // TODO REMOVE THIS
     ),
     chic-separator(1pt),
     chic-offset(7pt),

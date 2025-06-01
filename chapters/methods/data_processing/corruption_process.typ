@@ -11,25 +11,29 @@
     engine: "fdp",
     ```
     digraph G {
-      overlap=true
-      rankdir=LR
-      node [pin=true, shape=box, overlap=true, height=0.4]
-      doc [pos="-4,0.0!", label="Create Doc"]
-      lemmas [pos="-3.0,0.5!"]
-      inflexions [pos="-3.0,1.5!"]
-      split_a [pos="-3.0,-1.0!"]
-      split_n [pos="-3.0,-2.0!"]
-      split_v [pos="-3.0,-3.0!"]
-      corrupt [pos="-1.0,0.0!"]
-      distribute [pos="1.0,0.0!"]
-      doc -> corrupt
-      lemmas -> corrupt
-      inflexions -> corrupt
-      split_a -> corrupt
-      split_n -> corrupt
-      split_v -> corrupt
-      corrupt -> distribute
-      }
+    overlap=true
+    rankdir=LR
+    node [pin=true, shape=box, overlap=true, height=0.3, fontsize=8]
+    edge [fontsize=8]
+
+    // Visible nodes
+    tag        [pos="-2.7,0.0!", label="Tag data"]
+    corrupt    [pos="-1.0,0.0!"]
+    distribute [pos="0.5,0.0!"]
+    file [pos="0.0,-1.0!", label="Distribution file", shape=note]
+
+    // Invisible node (to represent an external source)
+    ext [pos="-4,0.0!" style=invis, width=0, height=0.3, label=""]
+    // Invisible node (to represent an external sink)
+    sink [pos="2,0.0!" style=invis, width=0, height=0.3, label=""]
+
+    // Edges
+    ext -> tag            [label="txt file"]
+    tag -> corrupt        [label="DocBin"]
+    corrupt -> distribute [label="Json"]
+    distribute -> sink    [label="train/validation set"]
+    file -> distribute    [label="error distribution"]
+    } 
     ```,
   )
 )

@@ -1,5 +1,6 @@
 #import "@preview/plotst:0.2.0": axis, plot, graph_plot, overlay
 #import "../../utils.typ": flex-caption, customRound
+#import "@preview/glossarium:0.5.1": gls, glspl
 
 
 #let pretraining = csv("../../results/pretraining.csv", )
@@ -30,32 +31,32 @@
 #let pretraining_graph = graph_plot(
   pretraining_plot, (100%, 30%),
   caption: flex-caption(
-    [mT5-base pre-training loss],
-    [mT5-base pre-training loss]
+    [#gls("MT5")-base pre-training loss],
+    [#gls("MT5")-base pre-training loss]
   ),
   stroke: blue,
 )
 #let ex3_graph = graph_plot(
   ex3_plot, (100%, 30%),
   caption: flex-caption(
-    [smaller mT5 pre-training loss, Red is Bitlinear and Blue is the regular smaller mT5],
-    [mT5 pre-training performance metrics]
+    [smaller #gls("MT5") pre-training loss, Red is Bitlinear and Blue is the regular smaller #gls("MT5")],
+    [#gls("MT5") pre-training performance metrics]
   ),
   stroke: blue,
 )
 #let ex3_bl_graph = graph_plot(
   ex3_bl_plot,(100%, 30%),
   caption: flex-caption(
-    [smaller mT5 pre-training loss, Red is Bitlinear and Blue is the regular smaller mT5],
-    [smaller mT5 pre-training loss]
+    [smaller #gls("MT5") pre-training loss, Red is Bitlinear and Blue is the regular smaller #gls("MT5")],
+    [smaller #gls("MT5") pre-training loss]
   ),
   stroke: red,
 )
 #let ex4_graph = graph_plot(
   ex4_plot, (100%, 30%),
   caption: flex-caption(
-    [mT5 pre-training performance metrics],
-    [mT5 pre-training performance metrics]
+    [#gls("MT5") pre-training performance metrics],
+    [#gls("MT5") pre-training performance metrics]
   ),
   stroke: green,
 )
