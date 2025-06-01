@@ -1,5 +1,5 @@
 #let data = csv("../../results/runa.csv", )
-== Kári <appendix.runa>
+== Rúna <appendix.runa>
 #show figure: set block(breakable: true)
 #figure(
   table(
