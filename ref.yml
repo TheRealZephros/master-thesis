@@ -87,44 +87,44 @@ nllb:
   title: "No Language Left Behind"
   author:
   - NLLB Team
-  - Marta R. Costa-jussà 
-  - James Cross
-  - Onur Çelebi
-  - Maha Elbayad
-  - Kenneth Heafield
-  - Kevin Heffernan
-  - Elahe Kalbassi
-  - Janice Lam
-  - Daniel Licht
-  - Jean Maillard
-  - Anna Sun
-  - Skyler Wang
-  - Guillaume Wenzek
-  - Al Youngblood
-  - Bapi Akula
-  - Loic Barrault
-  - Gabriel Mejia Gonzalez
-  - Prangthip Hansanti
-  - John Hoffman
-  - Semarley Jarrett
-  - Kaushik Ram Sadagopan
-  - Dirk Rowe
-  - Shannon Spruit
-  - Chau Tran
-  - Pierre Andrews
-  - Necip Fazil Ayan
-  - Shruti Bhosale
-  - Sergey Edunov
-  - Angela Fan
-  - Cynthia Gao
-  - Vedanuj Goswami
-  - Francisco Guzmán
-  - Philipp Koehn
-  - Alexandre Mourachko
-  - Christophe Ropers
-  - Safiyyah Saleem
-  - Holger Schwenk
-  - Jeff Wang
+  - Costa, Marta R.
+  - Cross, James
+  - Çelebi, Onur
+  - Elbayad, Maha
+  - Heafield, Kenneth
+  - Heffernan, Kevin
+  - Kalbassi, Elahe
+  - Lam, Janice
+  - Licht, Daniel
+  - Maillard, Jean
+  - Sun, Anna
+  - Wang, Skyler
+  - Wenzek, Guillaume
+  - Youngblood, Al
+  - Akula, Bapi
+  - Barrault, Loic
+  - Gonzalez, Gabriel Mejia
+  - Hansanti, Prangthip
+  - Hoffman, John
+  - Jarrett, Semarley
+  - Sadagopan, Kaushik Ram
+  - Rowe, Dirk
+  - Spruit, Shannon
+  - Tran, Chau
+  - Andrews, Pierre
+  - Ayan, Necip Fazil
+  - Bhosale, Shruti
+  - Edunov, Sergey
+  - Fan, Angela
+  - Gao, Cynthia
+  - Goswami, Vedanuj
+  - Guzmán, Francisco
+  - Koehn, Philipp
+  - Mourachko, Alexandre
+  - Ropers, Christophe
+  - Saleem, Safiyyah
+  - Schwenk, Holger
+  - Wang, Jeff 
   url: 
     value: "https://opus.nlpl.eu/NLLB/en&fo/v1/NLLB"
     date: "2025-02-17"
@@ -161,7 +161,7 @@ nllb_fo_2:
 Næs:
   type: "article"
   title: "Færøsk retskrivning - resultater fra en undersøgelse af færøske stile"
-  author: "Katrin Næs"
+  author: "Næs, Katrin"
   date: "2005"
   url:
     value: "http://ojs.statsbiblioteket.dk/index.php/sin/issue/archive"
@@ -191,7 +191,7 @@ rætt:
 fo_ordabók:
   type: "book"
   title: "Føroysk Orðabók"
-  author: Jóhan Hendrik W. Poulsen
+  author: Poulsen, Jóhan Hendrik W.
   publisher: Føroya Fróðskaparfelag
   date: "1998"
 
@@ -220,15 +220,15 @@ Raffel2019:
   type: article
   title: "Exploring the Limits of Transfer Learning with a Unified Text-to-Text Transformer"
   author:
-  - Colin Raffel
-  - Noam Shazeer
-  - Adam Roberts
-  - Katherine Lee
-  - Sharan Narang
-  - Michael Matena
-  - Yanqi Zhou
-  - Wei Li
-  - Peter J. Liu
+  - Raffel, Colin
+  - Shazeer, Noam
+  - Roberts, Adam
+  - Lee, Katherine
+  - Narang, Sharan
+  - Matena, Michael
+  - Zhou, Yanqi
+  - Li, Wei
+  - Liu, Peter J.
   date: 2019-10
   serial-number:
     arxiv: '1910.10683'
@@ -242,14 +242,14 @@ mt5:
   type: article
   title: "mT5: A massively multilingual pre-trained text-to-text transformer"
   author:
-  - Linting Xue
-  - Noah Constant
-  - Adam Roberts
-  - Mihir Kale
-  - Rami Al-Rfou
-  - Aditya Siddhant
-  - Aditya Barua
-  - Colin Raffel
+  - Xue, Linting
+  - Constant, Noah
+  - Roberts, Adam
+  - Kale, Mihir
+  - Al-Rfou, Rami
+  - Siddhant, Aditya
+  - Barua, Aditya
+  - Raffel, Colin
   date: 2021-05
   serial-number:
     arxiv: '2010.11934v3'
@@ -262,7 +262,7 @@ mt5:
 nawrot:
   type: article
   title: "nanoT5: Fast & Simple Pre-training and Fine-tuning of T5 Models with Limited Resources"
-  author: Piotr Nawrot
+  author: Nawrot, Piotr
   date: 2023-12
   url:
     value: "https://aclanthology.org/2023.nlposs-1.11"
@@ -276,12 +276,12 @@ nawrot:
 Brockett2006:
   type: conference
   author:
-    - Chris Brockett
-    - William B. Dolan
+  - Brockett, Chris
+  - Dolan, William B.
   title: "Correcting ESL Errors Using Phrasal SMT Techniques"
   container-title: "Proceedings of the 21st International Conference on Computational Linguistics and 44th Annual Meeting of the Association for Computational Linguistics"
   publisher: Association for Computational Linguistics
-  issued: 2006
+  date: 2006
   page: 249-256
   url:
     value: https://aclanthology.org/P06-1032
@@ -289,13 +289,13 @@ Brockett2006:
 Bryant2017:
   type: article
   author:
-    - Christopher Bryant
-    - Mariano Felice
-    - Ted Briscoe
+  - bryant, Christopher
+  - Felice, Mariano
+  - Briscoe, Ted
   title: "Automatic annotation and evaluation of error types for grammatical error correction"
   container-title: "Proceedings of the 55th Annual Meeting of the Association for Computational Linguistics"
   publisher: Association for Computational Linguistics
-  issued: 2017
+  date: 2017
   page: 793-805
   url:
     value: https://aclanthology.org/P17-1074/
@@ -303,12 +303,13 @@ Bryant2017:
 Chodorow2010:
   type: conference
   author:
-    - Martin Chodorow
-    - Claudia Leacock
-    - Joel R. Tetreault
+  - Chodorow, Martin
+  - Leacock, Claudia
+  - Tetreault, Joel R.
+
   title: "Detection of Grammatical Errors Involving Prepositions"
   container-title: "Proceedings of the Fourth ACL-SIGSEM Workshop on Prepositions"
-  issued: 2007
+  date: 2007
   page: 25-30
   publisher: Association for Computational Linguistics
   url:
@@ -317,13 +318,13 @@ Chodorow2010:
 Dahlmeier2013:
   type: article
   author:
-    - Daniel Dahlmeier
-    - Hwee Tou Ng
-    - Siew Mei Wu
+  - Dahlmeier, Daniel
+  - Ng, Hwee Tou
+  - Wu, Siew Mei
   title: "Building a Large Annotated Corpus of Learner English: The NUS Corpus of Learner English"
   container-title: "Proceedings of the Eighth Workshop on Innovative Use of NLP for Building Educational Applications"
   publisher: Association for Computational Linguistics
-  issued: 2013
+  date: 2013
   page: 22-31
   url:
     value: https://aclanthology.org/W13-1703
@@ -331,12 +332,12 @@ Dahlmeier2013:
 Grundkiewicz2019:
   type: article
   author:
-    - Roman Grundkiewicz
-    - Marcin Junczys-Dowmunt
+  - Grundkiewicz, Roman
+  - Junczys-Dowmunt, Marcin
   title: "Neural Grammatical Error Correction Systems with Unsupervised Pre-training on Synthetic Data"
   container-title: "Proceedings of the 14th Workshop on Innovative Use of NLP for Building Educational Applications"
   publisher: Association for Computational Linguistics
-  issued: 2019
+  date: 2019
   page: 252-263
   url:
     value: https://aclanthology.org/W19-4427/
@@ -344,11 +345,11 @@ Grundkiewicz2019:
 Kaneko2020:
   type: article
   author:
-    - Masahiro Kaneko
-    - Mamoru Komachi
+  - Kaneko, Masahiro
+  - Komachi, Mamoru
   title: "Encoder-Decoder Models Can Benefit from Pre-trained Masked Language Models in Grammatical Error Correction"
   container-title: "Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics"
-  issued: 2020
+  date: 2020
   page: 7029-7035
   publisher: Association for Computational Linguistics
   url:
@@ -357,13 +358,13 @@ Kaneko2020:
 Leacock2014:
   type: book
   author:
-    - Claudia Leacock
-    - Martin Chodorow
-    - Michael Gamon
-    - Joel Tetreault
+  - Leacock, Claudia
+  - Chodorow, Martin
+  - Gamon, Michael
+  - Tetreault, Joel
   title: "Automated Grammatical Error Detection for Language Learners"
   publisher: Morgan & Claypool Publishers
-  issued: 2014
+  date: 2014
   doi: 10.1007/978-3-031-02153-4
   url:
     value: https://doi.org/10.1007/978-3-031-02153-4
@@ -371,15 +372,15 @@ Leacock2014:
 Lichtarge2019:
   type: conference
   author:
-    - Jeffery Lichtarge
-    - Chris Alberti
-    - Daniel Andor
-    - Emily Pitler
-    - Z. Wei
+  - Lichtarge, Jeffery
+  - Alberti, Chris
+  - Andor, Daniel
+  - Pitler, Emily
+  - Wei, Z.
   title: "Corpora Generation for Grammatical Error Correction"
   container-title: "Proceedings of the 2019 Conference of the North American Chapter of the Association for Computational Linguistics"
   publisher: Association for Computational Linguistics
-  issued: 2019
+  date: 2019
   page: 3291-3299
   url:
     value: https://aclanthology.org/N19-1333/
@@ -387,17 +388,17 @@ Lichtarge2019:
 Liu2020:
   type: article
   author:
-    - Yinhan Liu
-    - Jiatao Gu
-    - Naman Goyal
-    - Xian Li
-    - Sergey Edunov
-    - Marjan Ghazvininejad
-    - Mike Lewis
-    - Luke Zettlemoyer
+  - Liu, Yinhan
+  - Gu, Jiatao
+  - Goyal, Naman
+  - Li, Xian
+  - Edunov, Sergey
+  - Ghazvininejad, Marjan
+  - Lewis, Mike
+  - Zettlemoyer, Luke
   title: "Multilingual Denoising Pre-training for Neural Machine Translation"
   container-title: "Transactions of the Association for Computational Linguistics"
-  issued: 2020
+  date: 2020
   page: 726-742
   url:
     value: https://aclanthology.org/2020.tacl-1.47
@@ -405,13 +406,13 @@ Liu2020:
 Mizumoto2011:
   type: conference
   author:
-    - Tomoya Mizumoto
-    - Mamoru Komachi
-    - Masaaki Nagata
-    - Yuji Matsumoto
+  - Mizumoto, Tomoya
+  - Komachi, Mamoru
+  - Nagata, Masaaki
+  - Matsumoto, Yuji
   title: "Mining Revision Log of Language Learning SNS for Automated Japanese Error Correction of Second Language Learners"
   container-title: "Proceedings of the 5th International Joint Conference on Natural Language Processing"
-  issued: 2011
+  date: 2011
   page: 147-155
   publisher: Asian Federation of NLP
   url:
@@ -420,12 +421,12 @@ Mizumoto2011:
 Ng2014:
   type: conference
   author:
-    - Siew Mei Ng
-    - Hwee Tou Ng
+  - Ng, Siew Mei
+  - Ng, Hwee Tou
   title: "The CoNLL-2014 Shared Task on Grammatical Error Correction"
   container-title: "Proceedings of the Eighteenth Conference on Computational Natural Language Learning: Shared Task"
   publisher: Association for Computational Linguistics
-  issued: 2014
+  date: 2014
   page: 1-14
   url:
     value: https://aclanthology.org/W14-1701
@@ -433,14 +434,14 @@ Ng2014:
 Omelianchuk2020:
   type: article
   author:
-    - Kostiantyn Omelianchuk
-    - Vitaliy Atrasevych
-    - Artem Chernodub
-    - Oleksandr Skurzhanskyi
+  - Omelianchuk, Kostiantyn
+  - Atrasevych, Vitaliy
+  - Chernodub, Artem
+  - Skurzhanskyi, Oleksandr
   title: "GECToR - Grammatical Error Correction: Tag, Not Rewrite"
   container-title: "Proceedings of the Fifteenth Workshop on Innovative Use of NLP for Building Educational Applications"
   publisher: Association for Computational Linguistics
-  issued: 2020
+  date: 2020
   page: 163-170
   url:
     value: https://aclanthology.org/2020.bea-1.16/
@@ -448,14 +449,14 @@ Omelianchuk2020:
 Yamashita2020:
   type: article
   author:
-  - Ikumi Yamashita
-  - Satoru Katsumata
-  - Masahiro Kaneko
-  - Aizhan Imankulova
-  - Mamoru Komachi
+  - Yamashita, Ikumi
+  - Katsumata, Satoru
+  - Kaneko, Masahiro
+  - Imankulova, Aizhan
+  - Komachi, Mamoru
   title: "Cross-lingual Transfer Learning for Grammatical Error Correction"
   container-title: "Proceedings of the 28th International Conference on Computational Linguistics"
-  issued: 2020
+  date: 2020
   page: 4704-4715
   publisher: International Committee on Computational Linguistics
   url:
@@ -464,11 +465,11 @@ Yamashita2020:
 Rozovskaya2010:
   type: article
   author:
-    - Alla Rozovskaya
-    - Dan Roth
+  - Rozovskaya, Alla
+  - Roth, Dan
   title: "Annotating ESL Errors Using Crowdsourcing"
   container-title: "Proceedings of the NAACL HLT 2010 Fifth Workshop on Building Educational Applications Using NLP"
-  issued: 2010
+  date: 2010
   page: 74-82
   publisher: Association for Computational Linguistics
   url:
@@ -477,14 +478,14 @@ Rozovskaya2010:
 Xie2018:
   type: conference
   author:
-    - Ziang Xie
-    - Anand Avati
-    - Naveen Arivazhagan
-    - Dan Jurafsky
-    - Andrew Ng
+  - Xie, Ziang
+  - Avati, Anand
+  - Arivazhagan, Naveen
+  - Jurafsky, Dan
+  - Ng, Andrew
   title: "Noising and Denoising Natural Language: Diverse Backtranslation for Grammar Correction"
   container-title: "Proceedings of the 2018 Conference of the North American Chapter of the Association for Computational Linguistics"
-  issued: 2018
+  date: 2018
   page: 619-628
   publisher: Association for Computational Linguistics
   url:
@@ -493,7 +494,7 @@ Xie2018:
 Nivre2020:
   type: article
   title: "Universal Dependencies v2: An evergrowing multilingual treebank collection"
-  author: Joakim Nivre et al.
+  author: Nivre, Joakim
   date: 2020
   page: 4034-4043
   publisher: Association for Computational Linguistics
@@ -504,9 +505,9 @@ Petrov2012:
   type: article
   title: "A Universal Part-of-Speech Tagset"
   author: 
-  - Slav Petrov
-  - Dipanjan Das
-  - Ryan McDonald
+  - Petrov, Slav
+  - Das, Dipanjan
+  - McDonald, Ryan
   date: 2012
   page: 2089-2096
   publisher: Association for Computational Linguistics
@@ -527,9 +528,9 @@ Tsarfaty2010:
   type: article
   title: "Statistical Parsing of Morphologically Rich Languages: What, How and Whither"
   author: 
-  - Reut Tsarfaty
-  - Joakim Nivre
-  - Evelina Andersson
+  - Tsarfaty, Reut
+  - Nivre, Joakim
+  - Andersson, Evelina
   date: 2010
   page: 1-12
   booktitle: "Proceedings of the NAACL Workshop on Statistical Parsing of Morphologically Rich Languages"
@@ -557,7 +558,7 @@ Zeman2017:
 Nivre2015:
   type: conference
   author:
-    - Joakim Nivre
+  - Nivre, Joakim
   title: "Towards a Universal Grammar for Natural Language Processing"
   container-title: "Proceedings of the 16th International Conference on Intelligent Text Processing and Computational Linguistics"
   page: 3-16
@@ -569,8 +570,8 @@ Nivre2015:
 Jurafsky2021:
   type: book
   author:
-    - Daniel Jurafsky
-    - James H. Martin
+  - Jurafsky, Daniel
+  - Martin, James H.
   title: "Speech and Language Processing"
   edition: 3
   publisher: Prentice Hall
@@ -582,10 +583,10 @@ Jurafsky2021:
 Mcdonald2005:
   type: article
   author:
-    - Ryan McDonald
-    - Fernando Pereira
-    - Kiril Ribarov
-    - Jan Hajič
+  - McDonald, Ryan
+  - Pereira, Fernando
+  - Ribarov, Kiril
+  - Hajič, Jan
   title: "Non-Projective Dependency Parsing using Spanning Tree Algorithms"
   container-title: "Proceedings of the Conference on Human Language Technology and Empirical Methods in Natural Language Processing"
   page: 523-530
@@ -598,7 +599,7 @@ Mcdonald2005:
 Dozat2017:
   type: thesis
   author:
-    - Timothy Dozat
+  - Dozat, Timothy
   title: "Arc-Factored Biaffine Dependency Parsing"
   publisher: Stanford University
   date: 2017
@@ -609,12 +610,12 @@ Dozat2017:
 Honnibal2020:
   type: article
   author:
-    - Matthew Honnibal
-    - Ines Montani
-    - Sofie Van Landeghem
-    - Adriane Boyd
+  - Honnibal, Matthew
+  - Montani, Ines
+  - Van Landeghem, Sofie
+  - Boyd, Adriane
   title: "spaCy: Industrial-strength Natural Language Processing in Python"
-  issued: 2020
+  date: 2020
   DOI: 10.5281/zenodo.1212303
   url:
     value: https://doi.org/10.5281/zenodo.1212303
@@ -629,11 +630,11 @@ spacy_dep:
 Yuan2016:
   type: article
   author:
-    - Zheng Yuan
-    - Ted Briscoe
+  - Yuan, Zheng
+  - Briscoe, Ted
   title: "Grammatical error correction using neural machine translation"
   container-title: "NAACL-HLT"
-  issued: 2016
+  date: 2016
   page: 380-386
   url: https://aclanthology.org/N16-1042/
   doi: 10.18653/v1/N16-1042
@@ -641,13 +642,13 @@ Yuan2016:
 Junczys-Dowmunt:
   type: article
   author:
-    - Marcin Junczys-Dowmunt
-    - Roman Grundkiewicz
-    - Magdalena Guz
-    - Ondrej Bojar
+  - Junczys-Dowmunt, Marcin
+  - Grundkiewicz, Roman
+  - Guz, Magdalena
+  - Bojar, Ondrej
   title: "Approaching neural grammatical error correction as a low-resource machine translation task"
   container-title: "Proceedings of NAACL-HLT"
-  issued: 2018
+  date: 2018
   page: 595-606
   url: https://aclanthology.org/N18-1055/
   doi: 10.18653/v1/N18-1055
@@ -655,10 +656,10 @@ Junczys-Dowmunt:
 Phan2020:
   type: article
   author:
-  - Trong Huy Phan
-  - Kazuma Yamamoto
+  - Phan, Trong Huy
+  - Yamamoto, Kazuma 
   title: "Resolving Class Imbalance in Object Detection with Weighted Cross Entropy Losses"
-  issued: 2020
+  date: 2020
   url: 
     value: https://arxiv.org/abs/2006.01413
     date: "2025-05-24"
@@ -667,15 +668,15 @@ Phan2020:
 guo2024:
   type: article
   author:
-    - Li Guo
-    - Keith Ross
-    - Zifan Zhao
-    - George Andriopoulos
-    - Shuyang Ling
-    - Yufeng Xu
-    - Zixuan Dong
+  - Guo, Li
+  - Ross, Keith
+  - Zhao, Zifan
+  - Andriopoulos, George
+  - Ling, Shuyang
+  - Xu, Yufeng
+  - Dong, Zixuan
   title: "Cross Entropy versus Label Smoothing: A Neural Collapse Perspective"
-  issued: 2024
+  date: 2024
   url:
     value: "https://arxiv.org/abs/2402.03979"
     date: "2025-05-24"
