@@ -72,7 +72,7 @@ For each attention head $r$: \
   where $W_o$ is the Final projection matrix that maps concatenated head outputs back to $d_"model"$
 
 
-=== #gls("T5") <background.t5.sec>
+=== T5 <background.t5.sec>
 Building on the foundation laid by the original Transformer architecture introduced in “Attention Is All You Need”, the #gls("T5") model proposed by @Raffel2019 marks a major advancement in the unification and simplification of natural language processing tasks. It introduces a flexible and scalable framework that reframes all NLP problems within a single, consistent text-to-text format. In this setup, both inputs and outputs are treated as strings, regardless of the task. For instance, translation is approached as: \
 "translate English to German: That is good #sym.arrow.r Das ist gut" \
 This unified formulation eliminates the need for task-specific heads or output formats, streamlining architecture design and enabling more effective multitask and transfer learning.\
@@ -83,7 +83,7 @@ When it comes to pretraining, #gls("T5") introduces a distinct span-corruption o
 Finally, the model family was released in multiple scales from #gls("T5")-Small to #gls("T5")-XXL and trained on the #gls("C4") dataset. Its design emphasizes scalability, demonstrating that performance improves predictably with increased model and data size, making it a cornerstone example of scaling laws in #gls("NLP").
 
 
-=== #gls("MT5") <background.mt5.sec>
+=== mT5 <background.mt5.sec>
 Building on the architecture and pretraining paradigm established by #gls("T5"), the #gls("MT5") model by @mt5 extends these principles to the multilingual domain. It retains the same encoder-decoder structure and self-attention mechanisms but is redesigned to perform well across a wide range of languages. This shift introduces several key adaptations to enhance cross-lingual generalization and mitigate the limitations of English-focused training.\
 #gls("MT5") is trained from scratch on a large, diverse multilingual corpus, incorporating improvements to tokenization and training strategy. Instead of #gls("T5")'s subword tokenizer, it uses a SentencePiece unigram model trained on data from 101 languages, boosting its handling of non-English scripts. It also departs from #gls("T5")'s loss computation method by including padding tokens in gradient calculations, promoting greater robustness in multilingual settings.\
 Unlike English-only pretrained models, it leverages the multilingual #gls("MC4") corpus from the outset, enabling broader language coverage. Additionally, it avoids language tags or specialized embeddings, learning to interpret inputs based purely on content. While the core architecture mirrors that of #gls("T5"), these targeted modifications make #gls("MT5") substantially more effective for global #gls("NLP").

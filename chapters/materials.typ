@@ -17,7 +17,7 @@ The key features of Nano#gls("T5") include:
 The training objective of the framework is the same as the original #gls("T5") model, which is span masking. This means that during training, the model learns to predict masked spans of text within a sequence, allowing it to capture contextual information and relationships between words effectively.
 The version of Nano#gls("T5") used in this study is a fork of the original repository by @schneiderkamplab.
 
-== Language Resources From #gls("MTD") <mtd.sec>
+== Language Resources From MTD <mtd.sec>
 #gls("MTD") Has released a number of resources for the Faroese language. A Github repository @fo_nlp_res contains a collection of datasets and models @mtd_res. \ \ 
 A private corpus developed by Uni Johannesen was used as a testset to evaluate the performance of the grammar and spelling models. The corpus contains \~2700 sentences and consists of manually corrected and annotated essays from students. The essays were written in Faroese and contain a variety of errors, including spelling, grammar, and punctuation errors. The testset was originally developed for a thesis to evaluate a #gls("GPT")-4o model on how well it understands faroese grammar and correct errors. Additionally the data used in the study by @Næs on spelling errors in faroese students' essays, was also used in this study. In addition, a private high quality corpus of faroese sentences was provided by #gls("MTD") for training.
 
@@ -33,5 +33,5 @@ The files with #gls("POS") and #gls("MORPH") labels contain 6,652 Faroese senten
 == Bendingar.fo <bendingar.sec>
 Bendingar.fo is a website, that hosts #gls("BEND") @bend_grunn. #gls("BEND") contains inflections, lemmas and morphological data for faroese words and names. Most words are taken from wordlists that were made for #gls("RÆTT") @rætt, that were taken from a faroese dictionary @fo_ordabók. The names are from the name list from #gls("MAL") @bend_grunn.
 
-== #gls("NLLB") <nllb.sec>
-The faroese dataset consists of multiple types of data primary #gls("BITEXT"), mined #gls("BITEXT") and monolingual Text. For faroese, the datasets consist of primary @nllb_fo_1 and mined bitext @nllb_fo_2. The primary #gls("BITEXT") corpora are publicly available parallel corpora from a variety of sources. The mined #gls("BITEXT") corpora are retrieved by large-scale #gls("BITEXT") mining. The mined data includes all the English-centric directions and a subset of non-English-centric directions. Only the faroese data is used in this study. 
+== No Language Left Behind <nllb.sec>
+The faroese #gls("NLLB") dataset consists of multiple types of data primary #gls("BITEXT"), mined #gls("BITEXT") and monolingual Text. For faroese, the datasets consist of primary @nllb_fo_1 and mined #gls("BITEXT") @nllb_fo_2. The primary #gls("BITEXT") corpora are publicly available parallel corpora from a variety of sources. The mined #gls("BITEXT") corpora are retrieved by large-scale #gls("BITEXT") mining. The mined data includes all the English-centric directions and a subset of non-English-centric directions. Only the faroese data is used in this study. 
