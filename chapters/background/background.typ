@@ -34,10 +34,9 @@ The dot product gives a result that is in the range [$-infinity,infinity$]. So t
 $ w_(i j) = frac(exp w'_(i j), sum_j exp w'_(i j)) $
 
 That is the basic self-attention operation, but it is not the only one. On @self_attention is an illustration of the self-attention mechanism. \
-// TODO do a better job of crediting the image
 #figure(
   caption: flex-caption(
-    [Self-attention mechanism illustrated. Not including the softmax operation. Credit to #link("https://peterbloem.nl/blog/transformers")[Peter Bloem]],
+    [Self-attention mechanism illustrated. Not including the softmax operation. @bloem],
     [Self-attention mechanism]
   ),
   image("../../images/self-attention.png", width: 80%, height: auto)

@@ -680,10 +680,15 @@ guo2024:
     value: "https://arxiv.org/abs/2402.03979"
     date: "2025-05-24"
 
-
 schneiderkamplab:
   type: misc
   title: "Schneiderkamp Lab Github Repository"
   url: 
     value: "https://github.com/schneiderkamplab/nanoT5"
     date: "2025-05-24"
+
+bloem:
+  type: misc
+  title: "Peter Bloem's blog on transformers"
+  url: 
+    value: "https://peterbloem.nl/blog/transformers"
